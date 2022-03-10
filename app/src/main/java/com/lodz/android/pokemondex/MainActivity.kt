@@ -1,11 +1,22 @@
 package com.lodz.android.pokemondex
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import com.lodz.android.pandora.base.activity.BaseActivity
+import com.lodz.android.pandora.utils.viewbinding.bindingLayout
+import com.lodz.android.pokemondex.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+class MainActivity : BaseActivity() {
+
+    private val mBinding: ActivityMainBinding by bindingLayout(ActivityMainBinding::inflate)
+
+    override fun getViewBindingLayout(): View = mBinding.root
+
+    override fun findViews(savedInstanceState: Bundle?) {
+        super.findViews(savedInstanceState)
+        getTitleBarLayout().setTitleName(R.string.app_name)
+        getTitleBarLayout().needBackButton(false)
     }
+
+
 }

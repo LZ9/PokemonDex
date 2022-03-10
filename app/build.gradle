@@ -14,12 +14,10 @@ android {
         versionName "1.0"
     }
 
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
+    viewBinding {
+        enabled = true
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -27,10 +25,39 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    buildTypes {
+        release {
+            minifyEnabled false // 是否进行混淆
+            zipAlignEnabled true // 是否支持zip
+            debuggable false // 是否支持调试
+            jniDebuggable false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {//debug版本的配置
+            minifyEnabled false // 是否进行混淆
+            zipAlignEnabled false // 是否支持zip
+            debuggable true // 是否支持调试
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            def newName
+            if (variant.baseName.endsWith('release')) {
+                def formattedDate = new Date().format('yyyyMMddHHmm')
+                newName = "AgileDevKt-v" + defaultConfig.versionName + "-" + variant.baseName + "-" + formattedDate + ".apk"
+            } else {
+                newName = "AgileDevKt-v" + defaultConfig.versionName + "-" + variant.baseName + ".apk"
+            }
+            outputFileName = newName
+        }
+    }
 }
 
 dependencies {
-
     implementation 'ink.lodz:pandora:1.8.6'
     implementation 'ink.lodz:imageloader-kt:1.2.1'
 }
