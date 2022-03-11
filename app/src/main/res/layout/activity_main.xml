@@ -19,7 +19,6 @@
             app:titleEnabled="false">
 
             <FrameLayout
-                android:id="@+id/collapsing_zone_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/color_d04741"
@@ -60,7 +59,6 @@
             </FrameLayout>
 
             <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:contentInsetStart="0dp"
@@ -102,6 +100,7 @@
             android:orientation="vertical">
 
             <FrameLayout
+                android:id="@+id/pokedex_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
@@ -113,7 +112,7 @@
                     android:layout_height="wrap_content"
                     android:scaleType="centerCrop"
                     app:shapeAppearanceOverlay="@style/cornerImageStyle"
-                    app:srcCompat="@drawable/ic_pokedex" />
+                    app:srcCompat="@drawable/bg_pokedex" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -122,7 +121,7 @@
                     android:layout_marginEnd="20dp"
                     android:layout_marginBottom="15dp"
                     android:text="@string/main_pokedex"
-                    android:textColor="@color/white"
+                    android:textColor="@drawable/selector_text_ffffff"
                     android:textSize="25sp"
                     android:textStyle="bold" />
             </FrameLayout>
@@ -137,6 +136,7 @@
                 android:orientation="horizontal">
 
                 <FrameLayout
+                    android:id="@+id/skill_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp">
@@ -145,7 +145,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:shapeAppearanceOverlay="@style/cornerImageStyle"
-                        app:srcCompat="@drawable/ic_skill" />
+                        app:srcCompat="@drawable/bg_skill" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -154,7 +154,7 @@
                         android:layout_marginEnd="20dp"
                         android:layout_marginBottom="15dp"
                         android:text="@string/main_skill"
-                        android:textColor="@color/white"
+                        android:textColor="@drawable/selector_text_ffffff"
                         android:textSize="25sp"
                         android:textStyle="bold" />
 
@@ -167,6 +167,7 @@
                     android:orientation="vertical">
 
                     <LinearLayout
+                        android:id="@+id/machine_btn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/bg_eeeef0_corners_10"
@@ -188,7 +189,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
                             android:text="@string/main_machine"
-                            android:textColor="@color/color_010101"
+                            android:textColor="@drawable/selector_text_010101"
                             android:textSize="18sp"
                             android:textStyle="bold" />
 
@@ -196,6 +197,7 @@
 
 
                     <LinearLayout
+                        android:id="@+id/abilities_btn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
@@ -219,13 +221,14 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
                             android:text="@string/main_abilities"
-                            android:textColor="@color/color_010101"
+                            android:textColor="@drawable/selector_text_010101"
                             android:textSize="18sp"
                             android:textStyle="bold" />
 
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/item_btn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/bg_eeeef0_corners_10"
@@ -247,7 +250,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
                             android:text="@string/main_item"
-                            android:textColor="@color/color_010101"
+                            android:textColor="@drawable/selector_text_010101"
                             android:textSize="18sp"
                             android:textStyle="bold" />
 
@@ -275,6 +278,7 @@
                     android:orientation="vertical">
 
                     <LinearLayout
+                        android:id="@+id/character_btn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/bg_eeeef0_corners_10"
@@ -289,20 +293,21 @@
                             android:layout_width="25dp"
                             android:layout_height="25dp"
                             android:contentDescription="@string/app_img_name"
-                            android:src="@drawable/ic_badge_red" />
+                            android:src="@drawable/ic_master_ball" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
                             android:text="@string/main_character"
-                            android:textColor="@color/color_010101"
+                            android:textColor="@drawable/selector_text_010101"
                             android:textSize="18sp"
                             android:textStyle="bold" />
 
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/place_btn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="25dp"
@@ -319,20 +324,21 @@
                             android:layout_width="25dp"
                             android:layout_height="25dp"
                             android:contentDescription="@string/app_img_name"
-                            android:src="@drawable/ic_badge_yellow" />
+                            android:src="@drawable/ic_super_ball" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
                             android:text="@string/main_place"
-                            android:textColor="@color/color_010101"
+                            android:textColor="@drawable/selector_text_010101"
                             android:textSize="18sp"
                             android:textStyle="bold" />
 
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/types_btn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/bg_eeeef0_corners_10"
@@ -347,14 +353,14 @@
                             android:layout_width="25dp"
                             android:layout_height="25dp"
                             android:contentDescription="@string/app_img_name"
-                            android:src="@drawable/ic_badge_blue" />
+                            android:src="@drawable/ic_senior_ball" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
                             android:text="@string/main_types"
-                            android:textColor="@color/color_010101"
+                            android:textColor="@drawable/selector_text_010101"
                             android:textSize="18sp"
                             android:textStyle="bold" />
 
@@ -362,6 +368,7 @@
                 </LinearLayout>
 
                 <FrameLayout
+                    android:id="@+id/team_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
@@ -369,7 +376,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:shapeAppearanceOverlay="@style/cornerImageStyle"
-                        app:srcCompat="@drawable/ic_team" />
+                        app:srcCompat="@drawable/bg_team" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -378,7 +385,7 @@
                         android:layout_marginEnd="20dp"
                         android:layout_marginBottom="15dp"
                         android:text="@string/main_team"
-                        android:textColor="@color/white"
+                        android:textColor="@drawable/selector_text_ffffff"
                         android:textSize="25sp"
                         android:textStyle="bold" />
 

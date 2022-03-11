@@ -1,7 +1,10 @@
 package com.lodz.android.pokemondex
 
+import android.graphics.Color
 import android.view.View
 import com.google.android.material.appbar.AppBarLayout
+import com.lodz.android.corekt.anko.getColorCompat
+import com.lodz.android.corekt.utils.SnackbarUtils
 import com.lodz.android.pandora.base.activity.AbsActivity
 import com.lodz.android.pandora.utils.viewbinding.bindingLayout
 import com.lodz.android.pandora.widget.contract.OnAppBarStateChangeListener
@@ -34,6 +37,48 @@ class MainActivity : AbsActivity() {
             }
 
         })
+
+        mBinding.pokedexBtn.setOnClickListener {
+            showDevelopSnackbar()
+        }
+
+        mBinding.skillBtn.setOnClickListener {
+            showDevelopSnackbar()
+        }
+
+        mBinding.machineBtn.setOnClickListener {
+            showDevelopSnackbar()
+        }
+
+        mBinding.abilitiesBtn.setOnClickListener {
+            showDevelopSnackbar()
+        }
+
+        mBinding.itemBtn.setOnClickListener {
+            showDevelopSnackbar()
+        }
+
+        mBinding.characterBtn.setOnClickListener {
+            showDevelopSnackbar()
+        }
+
+        mBinding.placeBtn.setOnClickListener {
+            showDevelopSnackbar()
+        }
+
+        mBinding.typesBtn.setOnClickListener {
+            showDevelopSnackbar()
+        }
+
+        mBinding.teamBtn.setOnClickListener {
+            showDevelopSnackbar()
+        }
+    }
+
+    private fun showDevelopSnackbar(){
+        SnackbarUtils.createShort(mBinding.root, "开发中")
+            .setBackgroundColor(getColorCompat(R.color.color_d04741))
+            .show()
     }
 
 }
