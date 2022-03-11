@@ -21,4 +21,41 @@
     <color name="color_909090">#909090</color>
     <color name="color_d9d9d9">#d9d9d9</color>
 
+    <!--  一般  -->
+    <color name="color_a1a1a1">#a1a1a1</color>
+    <!--  火  -->
+    <color name="color_c64122">#c64122</color>
+    <!--  水  -->
+    <color name="color_4b8be2">#4b8be2</color>
+    <!--  草  -->
+    <color name="color_54962a">#54962a</color>
+    <!--  电  -->
+    <color name="color_f5c644">#f5c644</color>
+    <!--  格斗  -->
+    <color name="color_9F422A">#9F422A</color>
+    <!--  岩石  -->
+    <color name="color_4B190E">#4B190E</color>
+    <!--  超能  -->
+    <color name="color_e36096">#e36096</color>
+    <!--  龙  -->
+    <color name="color_4075c5">#4075c5</color>
+    <!--  毒  -->
+    <color name="color_814489">#814489</color>
+    <!--  地面  -->
+    <color name="color_d7bc65">#d7bc65</color>
+    <!--  虫  -->
+    <color name="color_9ca93f">#9ca93f</color>
+    <!--  飞行  -->
+    <color name="color_90B1C5">#90B1C5</color>
+    <!--  幽灵  -->
+    <color name="color_6766b6">#6766b6</color>
+    <!--  冰  -->
+    <color name="color_7ECFF2">#7ECFF2</color>
+    <!--  钢  -->
+    <color name="color_709ca5">#709ca5</color>
+    <!--  恶  -->
+    <color name="color_6d718e">#6d718e</color>
+    <!--  妖精  -->
+    <color name="color_ec98f8">#ec98f8</color>
+
 </resources>

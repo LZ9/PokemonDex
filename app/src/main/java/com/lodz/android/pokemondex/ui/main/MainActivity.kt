@@ -1,7 +1,10 @@
 package com.lodz.android.pokemondex.ui.main
 
+import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
 import com.google.android.material.appbar.AppBarLayout
+import com.lodz.android.corekt.anko.dp2px
 import com.lodz.android.corekt.anko.getColorCompat
 import com.lodz.android.corekt.utils.SnackbarUtils
 import com.lodz.android.pandora.base.activity.AbsActivity
@@ -9,12 +12,28 @@ import com.lodz.android.pandora.utils.viewbinding.bindingLayout
 import com.lodz.android.pandora.widget.contract.OnAppBarStateChangeListener
 import com.lodz.android.pokemondex.R
 import com.lodz.android.pokemondex.databinding.ActivityMainBinding
+import com.lodz.android.pokemondex.ui.pokedex.PokeDexActivity
 
 class MainActivity : AbsActivity() {
 
     private val mBinding: ActivityMainBinding by bindingLayout(ActivityMainBinding::inflate)
 
     override fun getAbsViewBindingLayout(): View = mBinding.root
+
+    override fun findViews(savedInstanceState: Bundle?) {
+        super.findViews(savedInstanceState)
+        mBinding.titleBarLayout.addExpandView(createSettingView())
+    }
+
+    private fun createSettingView(): View {
+        val settingBtn = ImageView(getContext())
+        settingBtn.setImageResource(com.lodz.android.pandora.R.drawable.pandora_ic_menu)
+        settingBtn.setPadding(dp2px(15), 0, dp2px(15), 0)
+        settingBtn.setOnClickListener {
+            showDevelopSnackbar()
+        }
+        return settingBtn
+    }
 
     override fun setListeners() {
         super.setListeners()
@@ -38,7 +57,7 @@ class MainActivity : AbsActivity() {
 
         // 图鉴
         mBinding.pokedexBtn.setOnClickListener {
-            showDevelopSnackbar()
+            PokeDexActivity.start(getContext())
         }
 
         // 招式

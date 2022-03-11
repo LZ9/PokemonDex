@@ -62,4 +62,5 @@ android {
 dependencies {
     implementation 'ink.lodz:pandora:1.8.6'
     implementation 'ink.lodz:imageloader-kt:1.2.1'
+    implementation "com.github.florent37:glidepalette:2.1.2"
 }
