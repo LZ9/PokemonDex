@@ -1,22 +1,39 @@
 package com.lodz.android.pokemondex
 
-import android.os.Bundle
 import android.view.View
-import com.lodz.android.pandora.base.activity.BaseActivity
+import com.google.android.material.appbar.AppBarLayout
+import com.lodz.android.pandora.base.activity.AbsActivity
 import com.lodz.android.pandora.utils.viewbinding.bindingLayout
+import com.lodz.android.pandora.widget.contract.OnAppBarStateChangeListener
 import com.lodz.android.pokemondex.databinding.ActivityMainBinding
 
-class MainActivity : BaseActivity() {
+class MainActivity : AbsActivity() {
 
     private val mBinding: ActivityMainBinding by bindingLayout(ActivityMainBinding::inflate)
 
-    override fun getViewBindingLayout(): View = mBinding.root
+    override fun getAbsViewBindingLayout(): View = mBinding.root
 
-    override fun findViews(savedInstanceState: Bundle?) {
-        super.findViews(savedInstanceState)
-        getTitleBarLayout().setTitleName(R.string.app_name)
-        getTitleBarLayout().needBackButton(false)
+    override fun setListeners() {
+        super.setListeners()
+        mBinding.appBarLayout.addOnOffsetChangedListener(object : OnAppBarStateChangeListener() {
+            override fun onStateChanged(appBarLayout: AppBarLayout, state: Int, delta: Double) {
+                when (state) {
+                    EXPANDED -> {// 完全展开
+                        mBinding.titleBarLayout.visibility = View.VISIBLE
+                        mBinding.titleBarLayout.visibility = View.GONE
+                    }
+                    COLLAPSED -> {// 完全折叠
+                        mBinding.titleBarLayout.alpha = 1f
+                    }
+                    else -> { // 滑动中
+                        mBinding.titleBarLayout.alpha = (1 - delta).toFloat()
+                        mBinding.titleBarLayout.visibility = View.VISIBLE
+                    }
+                }
+
+            }
+
+        })
     }
-
 
 }

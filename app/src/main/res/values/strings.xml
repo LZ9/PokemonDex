@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">宝可梦图鉴</string>
+    <string name="app_name">宝可梦计划</string>
+    <string name="app_img_name">宝可梦计划</string>
+
+    <string name="main_pokemon_en">Pokémon</string>
+    <string name="main_project_en">Project</string>
+
 </resources>
