@@ -1,6 +1,5 @@
-package com.lodz.android.pokemondex
+package com.lodz.android.pokemondex.ui.main
 
-import android.graphics.Color
 import android.view.View
 import com.google.android.material.appbar.AppBarLayout
 import com.lodz.android.corekt.anko.getColorCompat
@@ -8,6 +7,7 @@ import com.lodz.android.corekt.utils.SnackbarUtils
 import com.lodz.android.pandora.base.activity.AbsActivity
 import com.lodz.android.pandora.utils.viewbinding.bindingLayout
 import com.lodz.android.pandora.widget.contract.OnAppBarStateChangeListener
+import com.lodz.android.pokemondex.R
 import com.lodz.android.pokemondex.databinding.ActivityMainBinding
 
 class MainActivity : AbsActivity() {
@@ -33,43 +33,50 @@ class MainActivity : AbsActivity() {
                         mBinding.titleBarLayout.visibility = View.VISIBLE
                     }
                 }
-
             }
-
         })
 
+        // 图鉴
         mBinding.pokedexBtn.setOnClickListener {
             showDevelopSnackbar()
         }
 
+        // 招式
         mBinding.skillBtn.setOnClickListener {
             showDevelopSnackbar()
         }
 
+        // 技巧机
         mBinding.machineBtn.setOnClickListener {
             showDevelopSnackbar()
         }
 
+        // 特性
         mBinding.abilitiesBtn.setOnClickListener {
             showDevelopSnackbar()
         }
 
+        // 道具
         mBinding.itemBtn.setOnClickListener {
             showDevelopSnackbar()
         }
 
+        // 性格
         mBinding.characterBtn.setOnClickListener {
             showDevelopSnackbar()
         }
 
+        // 地点
         mBinding.placeBtn.setOnClickListener {
             showDevelopSnackbar()
         }
 
+        // 属性
         mBinding.typesBtn.setOnClickListener {
             showDevelopSnackbar()
         }
 
+        // 我的队伍
         mBinding.teamBtn.setOnClickListener {
             showDevelopSnackbar()
         }
