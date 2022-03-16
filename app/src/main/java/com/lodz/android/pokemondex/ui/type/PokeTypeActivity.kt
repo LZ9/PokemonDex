@@ -2,6 +2,7 @@ package com.lodz.android.pokemondex.ui.type
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
@@ -12,6 +13,7 @@ import com.lodz.android.corekt.security.AES
 import com.lodz.android.pandora.base.activity.BaseActivity
 import com.lodz.android.pandora.utils.coroutines.CoroutinesWrapper
 import com.lodz.android.pandora.utils.viewbinding.bindingLayout
+import com.lodz.android.pandora.widget.rv.decoration.GridItemDecoration
 import com.lodz.android.pokemondex.R
 import com.lodz.android.pokemondex.bean.poke.TypeInfoListBean
 import com.lodz.android.pokemondex.config.Constant
@@ -35,22 +37,36 @@ class PokeTypeActivity : BaseActivity() {
 
     override fun getViewBindingLayout(): View = mBinding.root
 
-    /** 适配器 */
-    private lateinit var mAdapter: PokeTypeAdapter
+    /** 属性标签适配器 */
+    private lateinit var mTagAdapter: PokeTypeTagAdapter
+
+    /** 属性列表适配器 */
+    private lateinit var mTableAdapter: PokeTypeAdapter
 
     override fun findViews(savedInstanceState: Bundle?) {
         super.findViews(savedInstanceState)
         getTitleBarLayout().setTitleName(R.string.main_types)
-        initRecyclerView()
+        initTagRecyclerView()
+        initTableRecyclerView()
     }
 
-    private fun initRecyclerView() {
+    private fun initTagRecyclerView() {
+        val layoutManager = GridLayoutManager(getContext(), 4)
+        layoutManager.orientation = RecyclerView.VERTICAL
+        mTagAdapter = PokeTypeTagAdapter(getContext())
+        mBinding.tagRv.layoutManager = layoutManager
+        mBinding.tagRv.setHasFixedSize(true)
+        mBinding.tagRv.addItemDecoration(GridItemDecoration.create(getContext()).setDividerSpace(5).setDividerInt(Color.WHITE))
+        mBinding.tagRv.adapter = mTagAdapter
+    }
+
+    private fun initTableRecyclerView() {
         val layoutManager = GridLayoutManager(getContext(), 18)
         layoutManager.orientation = RecyclerView.VERTICAL
-        mAdapter = PokeTypeAdapter(getContext())
-        mBinding.recyclerView.layoutManager = layoutManager
-        mBinding.recyclerView.setHasFixedSize(true)
-        mBinding.recyclerView.adapter = mAdapter
+        mTableAdapter = PokeTypeAdapter(getContext())
+        mBinding.tableRv.layoutManager = layoutManager
+        mBinding.tableRv.setHasFixedSize(true)
+        mBinding.tableRv.adapter = mTableAdapter
     }
 
     override fun onClickBackBtn() {
@@ -67,7 +83,8 @@ class PokeTypeActivity : BaseActivity() {
             }
             .action {
                 onSuccess {
-                    mAdapter.setData(it.records.toMutableList())
+                    mTagAdapter.setData(it.records.toMutableList())
+                    mTableAdapter.setData(it.records.toMutableList())
                     showStatusCompleted()
                 }
             }
