@@ -3,23 +3,17 @@ package com.lodz.android.pokemondex.ui.main
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
-import com.alibaba.fastjson.JSON
 import com.google.android.material.appbar.AppBarLayout
 import com.lodz.android.corekt.anko.dp2px
-import com.lodz.android.corekt.anko.getAssetsFileContent
 import com.lodz.android.corekt.anko.getColorCompat
-import com.lodz.android.corekt.log.PrintLog
-import com.lodz.android.corekt.security.AES
 import com.lodz.android.corekt.utils.SnackbarUtils
 import com.lodz.android.pandora.base.activity.AbsActivity
-import com.lodz.android.pandora.utils.coroutines.CoroutinesWrapper
 import com.lodz.android.pandora.utils.viewbinding.bindingLayout
 import com.lodz.android.pandora.widget.contract.OnAppBarStateChangeListener
 import com.lodz.android.pokemondex.R
-import com.lodz.android.pokemondex.bean.poke.TypeInfoListBean
-import com.lodz.android.pokemondex.config.Constant
 import com.lodz.android.pokemondex.databinding.ActivityMainBinding
 import com.lodz.android.pokemondex.ui.pokedex.PokeDexActivity
+import com.lodz.android.pokemondex.ui.type.PokeTypeActivity
 
 class MainActivity : AbsActivity() {
 
@@ -99,18 +93,7 @@ class MainActivity : AbsActivity() {
 
         // 属性
         mBinding.typesBtn.setOnClickListener {
-            CoroutinesWrapper.create(getContext())
-                .request {
-                    JSON.parseObject(AES.decrypt(getAssetsFileContent(Constant.TYPE_INFO_FILE_NAME), AES.KEY), TypeInfoListBean::class.java)
-                }
-                .actionPg(getContext()) {
-                    onSuccess {
-                        PrintLog.dS("testtag", it.toString())
-                    }
-                    onError { e, isNetwork ->
-                        showSnackbar("属性列表初始化失败")
-                    }
-                }
+            PokeTypeActivity.start(getContext())
         }
 
         // 我的队伍

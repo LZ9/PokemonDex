@@ -17,5 +17,7 @@
     <string name="main_explanation">此应用是由玩家为玩家开发。本应用并非官方程序并非由任天堂、Game Freak或宝可梦公司支持或批准，或和以上公司相关。\n本应用所使用的图片有些受版权保护且为合理使用。宝可梦及宝可梦角色名称皆为任天堂的商标。无侵犯版权之意。</string>
     <string name="main_baseline">你已经看到了底线</string>
 
-
+    <string name="poke_type_invalid">×</string>
+    <string name="poke_type_double">2</string>
+    <string name="poke_type_not_effective">½</string>
 </resources>

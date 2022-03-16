@@ -23,39 +23,57 @@
 
     <!--  一般 Normal  -->
     <color name="color_a1a1a1">#a1a1a1</color>
+    <color name="color_55a1a1a1">#55a1a1a1</color>
     <!--  火 Fire  -->
     <color name="color_c64122">#c64122</color>
+    <color name="color_55c64122">#55c64122</color>
     <!--  水 Water  -->
     <color name="color_4b8be2">#4b8be2</color>
+    <color name="color_554b8be2">#554b8be2</color>
     <!--  草 Grass  -->
     <color name="color_54962a">#54962a</color>
+    <color name="color_5554962a">#5554962a</color>
     <!--  电 Electric  -->
     <color name="color_f5c644">#f5c644</color>
+    <color name="color_55f5c644">#55f5c644</color>
     <!--  格斗 Fighting  -->
     <color name="color_9F422A">#9F422A</color>
+    <color name="color_559F422A">#559F422A</color>
     <!--  岩石 Rock  -->
     <color name="color_4B190E">#4B190E</color>
+    <color name="color_554B190E">#554B190E</color>
     <!--  超能 Psychic  -->
     <color name="color_e36096">#e36096</color>
+    <color name="color_55e36096">#55e36096</color>
     <!--  龙 Dragon  -->
     <color name="color_4075c5">#4075c5</color>
+    <color name="color_554075c5">#554075c5</color>
     <!--  毒 Poison  -->
     <color name="color_814489">#814489</color>
+    <color name="color_55814489">#55814489</color>
     <!--  地面 Ground  -->
     <color name="color_d7bc65">#d7bc65</color>
+    <color name="color_55d7bc65">#55d7bc65</color>
     <!--  虫 Bug  -->
     <color name="color_9ca93f">#9ca93f</color>
+    <color name="color_559ca93f">#559ca93f</color>
     <!--  飞行 Flying  -->
     <color name="color_90B1C5">#90B1C5</color>
+    <color name="color_5590B1C5">#5590B1C5</color>
     <!--  幽灵 Ghost  -->
     <color name="color_6766b6">#6766b6</color>
+    <color name="color_556766b6">#556766b6</color>
     <!--  冰 Ice  -->
     <color name="color_7ECFF2">#7ECFF2</color>
+    <color name="color_557ECFF2">#557ECFF2</color>
     <!--  钢 Steel  -->
     <color name="color_709ca5">#709ca5</color>
+    <color name="color_55709ca5">#55709ca5</color>
     <!--  恶 Dark  -->
     <color name="color_6d718e">#6d718e</color>
+    <color name="color_556d718e">#556d718e</color>
     <!--  妖精 Fairy  -->
     <color name="color_ec98f8">#ec98f8</color>
+    <color name="color_55ec98f8">#55ec98f8</color>
 
 </resources>
