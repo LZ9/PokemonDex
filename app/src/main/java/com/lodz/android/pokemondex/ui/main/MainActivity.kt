@@ -3,14 +3,21 @@ package com.lodz.android.pokemondex.ui.main
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
+import com.alibaba.fastjson.JSON
 import com.google.android.material.appbar.AppBarLayout
 import com.lodz.android.corekt.anko.dp2px
+import com.lodz.android.corekt.anko.getAssetsFileContent
 import com.lodz.android.corekt.anko.getColorCompat
+import com.lodz.android.corekt.log.PrintLog
+import com.lodz.android.corekt.security.AES
 import com.lodz.android.corekt.utils.SnackbarUtils
 import com.lodz.android.pandora.base.activity.AbsActivity
+import com.lodz.android.pandora.utils.coroutines.CoroutinesWrapper
 import com.lodz.android.pandora.utils.viewbinding.bindingLayout
 import com.lodz.android.pandora.widget.contract.OnAppBarStateChangeListener
 import com.lodz.android.pokemondex.R
+import com.lodz.android.pokemondex.bean.poke.TypeInfoListBean
+import com.lodz.android.pokemondex.config.Constant
 import com.lodz.android.pokemondex.databinding.ActivityMainBinding
 import com.lodz.android.pokemondex.ui.pokedex.PokeDexActivity
 
@@ -30,7 +37,7 @@ class MainActivity : AbsActivity() {
         settingBtn.setImageResource(com.lodz.android.pandora.R.drawable.pandora_ic_menu)
         settingBtn.setPadding(dp2px(15), 0, dp2px(15), 0)
         settingBtn.setOnClickListener {
-            showDevelopSnackbar()
+            showSnackbar()
         }
         return settingBtn
     }
@@ -62,47 +69,58 @@ class MainActivity : AbsActivity() {
 
         // 招式
         mBinding.skillBtn.setOnClickListener {
-            showDevelopSnackbar()
+            showSnackbar()
         }
 
         // 技巧机
         mBinding.machineBtn.setOnClickListener {
-            showDevelopSnackbar()
+            showSnackbar()
         }
 
         // 特性
         mBinding.abilitiesBtn.setOnClickListener {
-            showDevelopSnackbar()
+            showSnackbar()
         }
 
         // 道具
         mBinding.itemBtn.setOnClickListener {
-            showDevelopSnackbar()
+            showSnackbar()
         }
 
         // 性格
         mBinding.characterBtn.setOnClickListener {
-            showDevelopSnackbar()
+            showSnackbar()
         }
 
         // 地点
         mBinding.placeBtn.setOnClickListener {
-            showDevelopSnackbar()
+            showSnackbar()
         }
 
         // 属性
         mBinding.typesBtn.setOnClickListener {
-            showDevelopSnackbar()
+            CoroutinesWrapper.create(getContext())
+                .request {
+                    JSON.parseObject(AES.decrypt(getAssetsFileContent(Constant.TYPE_INFO_FILE_NAME), AES.KEY), TypeInfoListBean::class.java)
+                }
+                .actionPg(getContext()) {
+                    onSuccess {
+                        PrintLog.dS("testtag", it.toString())
+                    }
+                    onError { e, isNetwork ->
+                        showSnackbar("属性列表初始化失败")
+                    }
+                }
         }
 
         // 我的队伍
         mBinding.teamBtn.setOnClickListener {
-            showDevelopSnackbar()
+            showSnackbar()
         }
     }
 
-    private fun showDevelopSnackbar(){
-        SnackbarUtils.createShort(mBinding.root, "开发中")
+    private fun showSnackbar(msg: String = "开发中") {
+        SnackbarUtils.createShort(mBinding.root, msg)
             .setBackgroundColor(getColorCompat(R.color.color_d04741))
             .show()
     }

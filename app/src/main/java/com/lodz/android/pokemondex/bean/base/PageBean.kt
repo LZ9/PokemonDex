@@ -1,4 +1,4 @@
-package com.lodz.android.agiledevkt.bean.base.response
+package com.lodz.android.pokemondex.bean.base
 
 /**
  * 分页包装类

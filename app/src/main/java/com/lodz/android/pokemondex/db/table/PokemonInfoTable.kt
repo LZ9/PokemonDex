@@ -21,10 +21,10 @@ data class PokemonInfoTable(
     var nameEN: String = "",
     /** 图片路径 */
     var imageUrl: String = "",
-    /** 属性列表 */
-    var types: Array<String> = arrayOf(),
-    /** 特性列表 */
-    var abilities: Array<String> = arrayOf(),
+    /** 属性列表Json */
+    var typesArrayJson: String = "",
+    /** 特性列表Json */
+    var abilitiesArrayJson: String = "",
 
     /** 分类 */
     var category: String = "",

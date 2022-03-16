@@ -1,7 +1,7 @@
 package com.lodz.android.pokemondex.ui.pokedex
 
 import androidx.lifecycle.MutableLiveData
-import com.lodz.android.agiledevkt.bean.base.response.PageBean
+import com.lodz.android.pokemondex.bean.base.PageBean
 import com.lodz.android.corekt.anko.IoScope
 import com.lodz.android.pandora.mvvm.vm.BaseRefreshViewModel
 import com.lodz.android.pokemondex.db.table.PokemonInfoTable
