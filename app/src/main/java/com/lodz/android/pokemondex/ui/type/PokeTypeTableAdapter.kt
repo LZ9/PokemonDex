@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.lodz.android.corekt.anko.getColorCompat
 import com.lodz.android.pandora.widget.rv.recycler.BaseRecyclerViewAdapter
 import com.lodz.android.pandora.widget.rv.recycler.DataVBViewHolder
+import com.lodz.android.pokemondex.R
 import com.lodz.android.pokemondex.bean.poke.TypeInfoBean
 import com.lodz.android.pokemondex.bean.utils.PokeUtils
 import com.lodz.android.pokemondex.databinding.RvItemPokeTypeBinding
@@ -16,7 +17,7 @@ import com.lodz.android.pokemondex.databinding.RvItemPokeTypeBinding
  * @author zhouL
  * @date 2022/3/16
  */
-class PokeTypeAdapter(context: Context) : BaseRecyclerViewAdapter<TypeInfoBean>(context) {
+class PokeTypeTableAdapter(context: Context) : BaseRecyclerViewAdapter<TypeInfoBean>(context) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder =
         DataVBViewHolder(getViewBindingLayout(RvItemPokeTypeBinding::inflate, parent))
@@ -32,13 +33,13 @@ class PokeTypeAdapter(context: Context) : BaseRecyclerViewAdapter<TypeInfoBean>(
 
     private fun showItem(holder: DataVBViewHolder, bean: TypeInfoBean, position: Int) {
         holder.getVB<RvItemPokeTypeBinding>().apply {
-            if (position == 0){
-                textTv.text = ""
-                textTv.setTextColor(Color.WHITE)
-                root.setBackgroundColor(Color.WHITE)
+            if (position == 0) {
+                textTv.setText(R.string.poke_type_table_directory)
+                root.setBackgroundColor(context.getColorCompat(R.color.color_11000000))
+                textTv.setTextColor(Color.GRAY)
                 return
             }
-            textTv.text = bean.nameCN
+            textTv.text = bean.nameCN.substring(0, 1)
             textTv.setTextColor(Color.WHITE)
             root.setBackgroundColor(context.getColorCompat(PokeUtils.getTypeColor(bean.id)))
         }

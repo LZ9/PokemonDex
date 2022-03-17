@@ -22,4 +22,6 @@
     <string name="poke_type_invalid">×</string>
     <string name="poke_type_double">2</string>
     <string name="poke_type_not_effective">½</string>
+    <string name="poke_type_table_directory">守\n攻</string>
+
 </resources>

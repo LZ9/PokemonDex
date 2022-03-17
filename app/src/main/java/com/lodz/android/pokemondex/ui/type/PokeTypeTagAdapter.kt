@@ -46,20 +46,15 @@ class PokeTypeTagAdapter(context: Context) : BaseRecyclerViewAdapter<TypeInfoBea
                 .build()
             val backgroundDrawable = getBgDrawable(shapeModel, bean)
             val pressedDrawable = getBgDrawable(shapeModel, bean)
-            pressedDrawable.alpha = 80
+            pressedDrawable.alpha = 90
             tagTv.background = SelectorUtils.createBgPressedDrawable(backgroundDrawable, pressedDrawable)
-            tagTv.setOnClickListener {
-
-            }
         }
     }
 
-    private fun getBgDrawable(
-        shapeModel: ShapeAppearanceModel,
-        bean: TypeInfoBean
-    ): MaterialShapeDrawable = MaterialShapeDrawable(shapeModel).apply {
-        setTint(context.getColorCompat(PokeUtils.getTypeColor(bean.id)))
-        paintStyle = Paint.Style.FILL
-    }
+    private fun getBgDrawable(shapeModel: ShapeAppearanceModel, bean: TypeInfoBean): MaterialShapeDrawable =
+        MaterialShapeDrawable(shapeModel).apply {
+            setTint(context.getColorCompat(PokeUtils.getTypeColor(bean.id)))
+            paintStyle = Paint.Style.FILL
+        }
 
 }

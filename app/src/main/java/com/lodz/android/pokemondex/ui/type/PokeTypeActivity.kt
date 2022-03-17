@@ -41,7 +41,7 @@ class PokeTypeActivity : BaseActivity() {
     private lateinit var mTagAdapter: PokeTypeTagAdapter
 
     /** 属性列表适配器 */
-    private lateinit var mTableAdapter: PokeTypeAdapter
+    private lateinit var mTableAdapter: PokeTypeTableAdapter
 
     override fun findViews(savedInstanceState: Bundle?) {
         super.findViews(savedInstanceState)
@@ -63,7 +63,7 @@ class PokeTypeActivity : BaseActivity() {
     private fun initTableRecyclerView() {
         val layoutManager = GridLayoutManager(getContext(), 18)
         layoutManager.orientation = RecyclerView.VERTICAL
-        mTableAdapter = PokeTypeAdapter(getContext())
+        mTableAdapter = PokeTypeTableAdapter(getContext())
         mBinding.tableRv.layoutManager = layoutManager
         mBinding.tableRv.setHasFixedSize(true)
         mBinding.tableRv.adapter = mTableAdapter
@@ -72,6 +72,13 @@ class PokeTypeActivity : BaseActivity() {
     override fun onClickBackBtn() {
         super.onClickBackBtn()
         finish()
+    }
+
+    override fun setListeners() {
+        super.setListeners()
+        mTagAdapter.setOnItemClickListener { viewHolder, item, position ->
+
+        }
     }
 
     override fun initData() {

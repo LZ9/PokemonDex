@@ -15,15 +15,25 @@ class TypeInfoBean {
     /** 英文名 */
     var nameEN: String = ""
 
-    /** 无效果（0）列表 */
-    var invalid: List<String> = arrayListOf()
+    /** 攻击无效果（0）列表 */
+    var attInvalid: List<String> = arrayListOf()
 
-    /** 双倍效果（x2）列表 */
-    var double: List<String> = arrayListOf()
+    /** 攻击双倍效果（x2）列表 */
+    var attDouble: List<String> = arrayListOf()
 
-    /** 不是很有效（1/2）列表 */
-    var notEffective: List<String> = arrayListOf()
+    /** 攻击不是很有效（1/2）列表 */
+    var attNotEffective: List<String> = arrayListOf()
+
+    /** 防御弱点（x2伤害）列表 */
+    var defWeakness: List<String> = arrayListOf()
+
+    /** 防御优势（1/2伤害）列表 */
+    var defAdvantage: List<String> = arrayListOf()
+
+    /** 完全防御（无伤害）列表 */
+    var defFull: List<String> = arrayListOf()
 
     /** 数据更新时间 */
     var updateTime: String = ""
+
 }

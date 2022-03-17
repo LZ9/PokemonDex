@@ -2,14 +2,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="40dp"
     android:orientation="vertical">
 
     <TextView
         android:id="@+id/text_tv"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="match_parent"
         android:gravity="center"
+        android:textColor="@color/white"
         android:textSize="12sp"
         tools:text="@string/poke_type_not_effective" />
 
