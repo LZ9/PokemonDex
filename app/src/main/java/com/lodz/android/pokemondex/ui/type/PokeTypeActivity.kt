@@ -15,6 +15,7 @@ import com.lodz.android.pandora.utils.coroutines.CoroutinesWrapper
 import com.lodz.android.pandora.utils.viewbinding.bindingLayout
 import com.lodz.android.pandora.widget.rv.decoration.GridItemDecoration
 import com.lodz.android.pokemondex.R
+import com.lodz.android.pokemondex.bean.poke.TypeInfoBean
 import com.lodz.android.pokemondex.bean.poke.TypeInfoListBean
 import com.lodz.android.pokemondex.config.Constant
 import com.lodz.android.pokemondex.databinding.ActivityPokeTypeBinding
@@ -77,8 +78,14 @@ class PokeTypeActivity : BaseActivity() {
     override fun setListeners() {
         super.setListeners()
         mTagAdapter.setOnItemClickListener { viewHolder, item, position ->
-
+            showPopup(viewHolder.itemView, item)
         }
+    }
+
+    private fun showPopup(view: View, bean: TypeInfoBean) {
+        val popupWindow = PokeTypePopupWindow(getContext(), bean)
+        popupWindow.create()
+        popupWindow.getPopup().showAsDropDown(view, -50, 20)
     }
 
     override fun initData() {

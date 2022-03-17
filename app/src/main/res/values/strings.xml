@@ -23,5 +23,16 @@
     <string name="poke_type_double">2</string>
     <string name="poke_type_not_effective">½</string>
     <string name="poke_type_table_directory">守\n攻</string>
+    <string name="poke_type_popup_attack">作为攻击方</string>
+    <string name="poke_type_popup_defense">作为被攻击方</string>
+    <string name="poke_type_popup_att_advantage">效果拔群：</string>
+    <string name="poke_type_popup_poor">没啥效果：</string>
+    <string name="poke_type_popup_att_invalid">完全无效：</string>
+    <string name="poke_type_popup_def_weakness">吃瘪弱点：</string>
+    <string name="poke_type_popup_def_advantage">防御优势：</string>
+    <string name="poke_type_popup_def_full">完全防御：</string>
+
+
+
 
 </resources>
