@@ -1,2 +1,2 @@
 # PokemonProject
-自制宝可梦工具
+宝可梦计划
