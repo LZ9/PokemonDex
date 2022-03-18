@@ -1,2 +1,2 @@
-# PokemonDex
-自制宝可梦图鉴
+# PokemonProject
+自制宝可梦工具
