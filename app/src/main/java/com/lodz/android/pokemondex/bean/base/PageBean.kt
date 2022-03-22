@@ -9,13 +9,13 @@ class PageBean<T> {
 
     companion object {
         /** 默认每页数量 */
-        const val DEFAULT_PAGE_SIZE = 10
+        const val DEFAULT_PAGE_SIZE = 200
 
         /** 默认起始页码 */
         const val DEFAULT_START_PAGE_NUM = 1
 
         /** 默认总数 */
-        const val DEFAULT_TOTAL = 30
+        const val DEFAULT_TOTAL = 905
     }
 
     /** 数据 */

@@ -8,6 +8,7 @@ import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.alibaba.fastjson.JSON
+import com.alibaba.fastjson.TypeReference
 import com.lodz.android.corekt.anko.getAssetsFileContent
 import com.lodz.android.corekt.security.AES
 import com.lodz.android.pandora.base.activity.BaseActivity
@@ -15,8 +16,8 @@ import com.lodz.android.pandora.utils.coroutines.CoroutinesWrapper
 import com.lodz.android.pandora.utils.viewbinding.bindingLayout
 import com.lodz.android.pandora.widget.rv.decoration.GridItemDecoration
 import com.lodz.android.pokemondex.R
-import com.lodz.android.pokemondex.bean.poke.TypeInfoBean
-import com.lodz.android.pokemondex.bean.poke.TypeInfoListBean
+import com.lodz.android.pokemondex.bean.base.BaseListBean
+import com.lodz.android.pokemondex.bean.poke.type.TypeInfoBean
 import com.lodz.android.pokemondex.config.Constant
 import com.lodz.android.pokemondex.databinding.ActivityPokeTypeBinding
 
@@ -93,7 +94,7 @@ class PokeTypeActivity : BaseActivity() {
 
         CoroutinesWrapper.create(getContext())
             .request {
-                JSON.parseObject(AES.decrypt(getAssetsFileContent(Constant.TYPE_INFO_FILE_NAME), AES.KEY), TypeInfoListBean::class.java)
+                JSON.parseObject(AES.decrypt(getAssetsFileContent(Constant.TYPE_INFO_FILE_NAME), AES.KEY), object:TypeReference<BaseListBean<TypeInfoBean>>(){})
             }
             .action {
                 onSuccess {

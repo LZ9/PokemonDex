@@ -8,7 +8,7 @@ import com.lodz.android.corekt.anko.getColorCompat
 import com.lodz.android.pandora.widget.rv.recycler.BaseRecyclerViewAdapter
 import com.lodz.android.pandora.widget.rv.recycler.DataVBViewHolder
 import com.lodz.android.pokemondex.R
-import com.lodz.android.pokemondex.bean.poke.TypeInfoBean
+import com.lodz.android.pokemondex.bean.poke.type.TypeInfoBean
 import com.lodz.android.pokemondex.bean.utils.PokeUtils
 import com.lodz.android.pokemondex.databinding.RvItemPokeTypeBinding
 

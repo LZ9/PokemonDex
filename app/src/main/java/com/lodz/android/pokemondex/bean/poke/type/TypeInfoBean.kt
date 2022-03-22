@@ -1,4 +1,4 @@
-package com.lodz.android.pokemondex.bean.poke
+package com.lodz.android.pokemondex.bean.poke.type
 
 /**
  * 宝可梦属性数据

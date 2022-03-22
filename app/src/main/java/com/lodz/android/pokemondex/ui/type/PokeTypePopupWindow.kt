@@ -12,7 +12,7 @@ import com.lodz.android.corekt.anko.getDrawableCompat
 import com.lodz.android.pandora.utils.viewbinding.bindingLayout
 import com.lodz.android.pandora.widget.popup.BasePopupWindow
 import com.lodz.android.pokemondex.R
-import com.lodz.android.pokemondex.bean.poke.TypeInfoBean
+import com.lodz.android.pokemondex.bean.poke.type.TypeInfoBean
 import com.lodz.android.pokemondex.bean.utils.PokeUtils
 import com.lodz.android.pokemondex.databinding.PopupPokeTypeBinding
 
