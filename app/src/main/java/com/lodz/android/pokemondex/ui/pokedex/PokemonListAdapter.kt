@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.Color
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.github.florent37.glidepalette.BitmapPalette
 import com.github.florent37.glidepalette.GlidePalette
 import com.google.android.material.imageview.ShapeableImageView
@@ -42,6 +43,7 @@ class PokemonListAdapter(context: Context) :BaseRecyclerViewAdapter<PokemonInfoB
     private fun showImg(pokeImg: ShapeableImageView, url: String) {
         ImageLoader.create(context)
             .loadUrl(url)
+            .diskCacheStrategy(DiskCacheStrategy.ALL)
             .into(pokeImg,
                 GlidePalette
                     .with(url)

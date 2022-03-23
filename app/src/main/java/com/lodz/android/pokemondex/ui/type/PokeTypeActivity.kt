@@ -92,7 +92,7 @@ class PokeTypeActivity : BaseActivity() {
     override fun initData() {
         super.initData()
 
-        CoroutinesWrapper.create(getContext())
+        CoroutinesWrapper.create(this)
             .request {
                 JSON.parseObject(AES.decrypt(getAssetsFileContent(Constant.TYPE_INFO_FILE_NAME), AES.KEY), object:TypeReference<BaseListBean<TypeInfoBean>>(){})
             }

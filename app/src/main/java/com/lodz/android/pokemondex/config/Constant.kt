@@ -9,6 +9,8 @@ object Constant {
 
     /** 属性数据文件名 */
     const val TYPE_INFO_FILE_NAME = "type_info_20220315.txt"
+    /** 宝可梦数据文件名 */
+    const val POKEMON_INFO_FILE_NAME = "pkm_info_20220322.json"
 
     /** 一般 */
     const val POKE_TYPE_NORMAL = 1

@@ -28,6 +28,9 @@ class PokemonInfoBean {
     /** 特性列表 */
     var abilitiesList: ArrayList<String> = arrayListOf()
 
+    /** 隐藏特性列表 */
+    var hideAbilitiesList: ArrayList<String> = arrayListOf()
+
     /** 身高 */
     var height: String = ""
 

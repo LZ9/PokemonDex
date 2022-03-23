@@ -62,7 +62,7 @@ class PokeDexActivity : BaseRefreshVmActivity() {
     }
 
     override fun onDataRefresh() {
-        mViewModel.requestDataList()
+        mViewModel.requestDataList(getContext())
     }
 
     override fun setListeners() {
@@ -84,6 +84,6 @@ class PokeDexActivity : BaseRefreshVmActivity() {
     override fun initData() {
         super.initData()
         showStatusLoading()
-        mViewModel.requestDataList()
+        mViewModel.requestDataList(getContext())
     }
 }
