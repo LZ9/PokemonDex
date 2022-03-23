@@ -19,10 +19,19 @@
 
     <color name="color_d04741">#d04741</color>
     <color name="color_eeeef0">#eeeef0</color>
+    <color name="color_eaeaea">#eaeaea</color>
     <color name="color_010101">#010101</color>
     <color name="color_909090">#909090</color>
     <color name="color_d9d9d9">#d9d9d9</color>
     <color name="color_fefefe">#fefefe</color>
+    <color name="color_da3320">#da3320</color>
+    <color name="color_f2bfbc">#f2bfbc</color>
+    <color name="color_438e31">#438e31</color>
+    <color name="color_e1fbd4">#e1fbd4</color>
+    <color name="color_454545">#454545</color>
+    <color name="color_ababab">#ababab</color>
+
+
 
     <!--  一般 Normal  -->
     <color name="color_a1a1a1">#a1a1a1</color>

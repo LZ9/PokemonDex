@@ -7,18 +7,12 @@ import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.alibaba.fastjson.JSON
-import com.alibaba.fastjson.TypeReference
-import com.lodz.android.corekt.anko.getAssetsFileContent
-import com.lodz.android.corekt.security.AES
-import com.lodz.android.pandora.base.activity.BaseActivity
-import com.lodz.android.pandora.utils.coroutines.CoroutinesWrapper
+import com.lodz.android.pandora.mvvm.base.activity.BaseVmActivity
 import com.lodz.android.pandora.utils.viewbinding.bindingLayout
+import com.lodz.android.pandora.utils.viewmodel.bindViewModel
 import com.lodz.android.pandora.widget.rv.decoration.GridItemDecoration
 import com.lodz.android.pokemondex.R
-import com.lodz.android.pokemondex.bean.base.BaseListBean
 import com.lodz.android.pokemondex.bean.poke.type.TypeInfoBean
-import com.lodz.android.pokemondex.config.Constant
 import com.lodz.android.pokemondex.databinding.ActivityPokeTypeBinding
 
 /**
@@ -26,7 +20,7 @@ import com.lodz.android.pokemondex.databinding.ActivityPokeTypeBinding
  * @author zhouL
  * @date 2022/3/16
  */
-class PokeTypeActivity : BaseActivity() {
+class PokeTypeActivity : BaseVmActivity() {
 
     companion object {
         fun start(context: Context) {
@@ -34,6 +28,11 @@ class PokeTypeActivity : BaseActivity() {
             context.startActivity(intent)
         }
     }
+
+
+    private val mViewModel by bindViewModel { PokeTypeViewModel() }
+
+    override fun getViewModel(): PokeTypeViewModel = mViewModel
 
     private val mBinding: ActivityPokeTypeBinding by bindingLayout(ActivityPokeTypeBinding::inflate)
 
@@ -63,7 +62,7 @@ class PokeTypeActivity : BaseActivity() {
     }
 
     private fun initTableRecyclerView() {
-        val layoutManager = GridLayoutManager(getContext(), 18)
+        val layoutManager = GridLayoutManager(getContext(), 19)
         layoutManager.orientation = RecyclerView.VERTICAL
         mTableAdapter = PokeTypeTableAdapter(getContext())
         mBinding.tableRv.layoutManager = layoutManager
@@ -76,10 +75,31 @@ class PokeTypeActivity : BaseActivity() {
         finish()
     }
 
+    override fun onClickReload() {
+        super.onClickReload()
+        showStatusLoading()
+        mViewModel.requestData(getContext())
+    }
+
     override fun setListeners() {
         super.setListeners()
         mTagAdapter.setOnItemClickListener { viewHolder, item, position ->
             showPopup(viewHolder.itemView, item)
+        }
+
+        mTableAdapter.setOnItemClickListener { viewHolder, item, position ->
+
+        }
+    }
+
+    override fun setViewModelObserves() {
+        super.setViewModelObserves()
+        mViewModel.mTypeList.observe(getLifecycleOwner()){
+            mTagAdapter.setData(it)
+        }
+
+        mViewModel.mTableList.observe(getLifecycleOwner()){
+            mTableAdapter.setData(it)
         }
     }
 
@@ -91,19 +111,8 @@ class PokeTypeActivity : BaseActivity() {
 
     override fun initData() {
         super.initData()
-
-        CoroutinesWrapper.create(this)
-            .request {
-                JSON.parseObject(AES.decrypt(getAssetsFileContent(Constant.TYPE_INFO_FILE_NAME), AES.KEY), object:TypeReference<BaseListBean<TypeInfoBean>>(){})
-            }
-            .action {
-                onSuccess {
-                    mTagAdapter.setData(it.records.toMutableList())
-                    mTableAdapter.setData(it.records.toMutableList())
-                    showStatusCompleted()
-                }
-            }
-
+        showStatusLoading()
+        mViewModel.requestData(getContext())
     }
 
 }

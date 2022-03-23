@@ -33,21 +33,40 @@ class PokeTypeTableAdapter(context: Context) : BaseRecyclerViewAdapter<TypeInfoB
 
     private fun showItem(holder: DataVBViewHolder, bean: TypeInfoBean, position: Int) {
         holder.getVB<RvItemPokeTypeBinding>().apply {
-            if (position == 0) {
-                textTv.setText(R.string.poke_type_table_directory)
-                root.setBackgroundColor(context.getColorCompat(R.color.color_11000000))
+            if (position == 0) {//起始区域
+                textTv.text = ""
+                textTv.setTextColor(Color.WHITE)
+                root.setBackgroundColor(Color.WHITE)
+                return
+            }
+            if (bean.nameCN.isEmpty()) {//空白区域
+                textTv.text = ""
                 textTv.setTextColor(Color.GRAY)
+                root.setBackgroundColor(if (position % 2 == 0) context.getColorCompat(R.color.white) else context.getColorCompat(R.color.color_eaeaea))
                 return
             }
             textTv.text = bean.nameCN.substring(0, 1)
+            val double = context.getString(R.string.poke_type_double)
+            val notEffective = context.getString(R.string.poke_type_not_effective)
+            val invalid = context.getString(R.string.poke_type_invalid)
+            if (textTv.text.equals(double)){//效果拔群
+                textTv.setTextColor(context.getColorCompat(R.color.color_438e31))
+                root.setBackgroundColor(context.getColorCompat(R.color.color_e1fbd4))
+                return
+            }
+            if (textTv.text.equals(notEffective)){//没啥效果
+                textTv.setTextColor(context.getColorCompat(R.color.color_da3320))
+                root.setBackgroundColor(context.getColorCompat(R.color.color_f2bfbc))
+                return
+            }
+            if (textTv.text.equals(invalid)){//无效
+                textTv.setTextColor(context.getColorCompat(R.color.color_454545))
+                root.setBackgroundColor(context.getColorCompat(R.color.color_ababab))
+                return
+            }
+            //属性文字
             textTv.setTextColor(Color.WHITE)
             root.setBackgroundColor(context.getColorCompat(PokeUtils.getTypeColor(bean.id)))
         }
     }
-
-
-//    private inner class DownloadViewHolder(val viewBinding: RvItemDownloadMarketBinding) : DataViewHolder(viewBinding.root) {
-//        var taskManager: TaskManager? = null
-//        var tag: Any? = null
-//    }
 }
