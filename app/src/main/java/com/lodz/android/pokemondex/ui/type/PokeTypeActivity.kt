@@ -86,10 +86,6 @@ class PokeTypeActivity : BaseVmActivity() {
         mTagAdapter.setOnItemClickListener { viewHolder, item, position ->
             showPopup(viewHolder.itemView, item)
         }
-
-        mTableAdapter.setOnItemClickListener { viewHolder, item, position ->
-
-        }
     }
 
     override fun setViewModelObserves() {
