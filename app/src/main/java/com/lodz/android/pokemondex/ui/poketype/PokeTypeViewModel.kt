@@ -1,4 +1,4 @@
-package com.lodz.android.pokemondex.ui.type
+package com.lodz.android.pokemondex.ui.poketype
 
 import android.content.Context
 import androidx.lifecycle.MutableLiveData

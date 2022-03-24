@@ -32,7 +32,15 @@
     <string name="poke_type_popup_def_advantage">防御优势：</string>
     <string name="poke_type_popup_def_full">完全防御：</string>
 
-
+    <string name="poke_dex_gen_1">第一世代</string>
+    <string name="poke_dex_gen_2">第二世代</string>
+    <string name="poke_dex_gen_3">第三世代</string>
+    <string name="poke_dex_gen_4">第四世代</string>
+    <string name="poke_dex_gen_5">第五世代</string>
+    <string name="poke_dex_gen_6">第六世代</string>
+    <string name="poke_dex_gen_7">第七世代</string>
+    <string name="poke_dex_gen_8">第八世代</string>
+    <string name="poke_dex_gen_unknow">未知世代</string>
 
 
 </resources>

@@ -1,6 +1,10 @@
-package com.lodz.android.pokemondex.bean.utils
+package com.lodz.android.pokemondex.utils
 
+import android.content.Context
+import android.graphics.*
 import androidx.annotation.ColorRes
+import com.lodz.android.corekt.anko.dp2pxRF
+import com.lodz.android.corekt.anko.getColorCompat
 import com.lodz.android.pokemondex.R
 import com.lodz.android.pokemondex.config.Constant
 
@@ -56,5 +60,32 @@ object PokeUtils {
         Constant.POKE_TYPE_GROUND_NAME -> R.color.color_d7bc65
         Constant.POKE_TYPE_FAIRY_NAME -> R.color.color_ec98f8
         else -> R.color.color_a1a1a1
+    }
+
+
+    /** 获取箭头图片，颜色[color] */
+    fun getArrowBitmap(context: Context, @ColorRes color: Int): Bitmap {
+        val side = context.dp2pxRF(20)
+        val centerPoint = side / 2
+
+        val bitmap = Bitmap.createBitmap(side.toInt(), side.toInt(), Bitmap.Config.ARGB_8888)
+        val canvas = Canvas(bitmap)
+        canvas.drawColor(Color.TRANSPARENT)
+        val paint = Paint()
+        paint.color = context.getColorCompat(color)
+        paint.strokeWidth = 7f
+        paint.isAntiAlias = true
+        paint.style = Paint.Style.STROKE
+        val path = Path()
+        path.moveTo(centerPoint, centerPoint + context.dp2pxRF(3))
+        path.lineTo(centerPoint - context.dp2pxRF(7), centerPoint - context.dp2pxRF(3))
+        path.moveTo(centerPoint, centerPoint + context.dp2pxRF(3))
+        path.lineTo(centerPoint + context.dp2pxRF(7), centerPoint - context.dp2pxRF(3))
+        canvas.drawPath(path, paint)
+
+        paint.isAntiAlias = true
+        paint.style = Paint.Style.FILL
+        canvas.drawCircle(centerPoint, centerPoint + context.dp2pxRF(3), 3f, paint)
+        return bitmap
     }
 }

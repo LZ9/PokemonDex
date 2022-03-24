@@ -1,4 +1,4 @@
-package com.lodz.android.pokemondex.ui.type
+package com.lodz.android.pokemondex.ui.poketype
 
 import android.content.Context
 import android.graphics.Color
@@ -9,7 +9,7 @@ import com.lodz.android.pandora.widget.rv.recycler.BaseRecyclerViewAdapter
 import com.lodz.android.pandora.widget.rv.recycler.DataVBViewHolder
 import com.lodz.android.pokemondex.R
 import com.lodz.android.pokemondex.bean.poke.type.PkmTypeInfoBean
-import com.lodz.android.pokemondex.bean.utils.PokeUtils
+import com.lodz.android.pokemondex.utils.PokeUtils
 import com.lodz.android.pokemondex.databinding.RvItemPokeTypeBinding
 
 /**

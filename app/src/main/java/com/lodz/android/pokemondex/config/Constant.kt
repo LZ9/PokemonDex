@@ -67,5 +67,27 @@ object Constant {
     const val POKE_TYPE_FAIRY =  18
     const val POKE_TYPE_FAIRY_NAME  = "妖精"
 
+    /** 宝可梦世代总数  */
+    const val POKE_GENERATION_COUNT = 8
+    /** 第一世代 */
+    const val POKE_GENERATION_1 = 1
+    /** 第二世代 */
+    const val POKE_GENERATION_2 = 2
+    /** 第三世代 */
+    const val POKE_GENERATION_3 = 3
+    /** 第四世代 */
+    const val POKE_GENERATION_4 = 4
+    /** 第五世代 */
+    const val POKE_GENERATION_5 = 5
+    /** 第六世代 */
+    const val POKE_GENERATION_6 = 6
+    /** 第七世代 */
+    const val POKE_GENERATION_7 = 7
+    /** 第八世代 */
+    const val POKE_GENERATION_8 = 8
 
+    /** 图鉴布局列表  */
+    const val POKE_DEX_LAYOUT_LINEAR = 1
+    /** 图鉴布局网格  */
+    const val POKE_DEX_LAYOUT_GRID = 2
 }
