@@ -11,7 +11,7 @@ import com.lodz.android.pandora.mvvm.vm.BaseViewModel
 import com.lodz.android.pandora.utils.coroutines.CoroutinesWrapper
 import com.lodz.android.pokemondex.R
 import com.lodz.android.pokemondex.bean.base.BaseListBean
-import com.lodz.android.pokemondex.bean.poke.type.TypeInfoBean
+import com.lodz.android.pokemondex.bean.poke.type.PkmTypeInfoBean
 import com.lodz.android.pokemondex.config.Constant
 import java.util.ArrayList
 
@@ -22,16 +22,16 @@ import java.util.ArrayList
  */
 class PokeTypeViewModel :BaseViewModel(){
 
-    var mTypeList = MutableLiveData<ArrayList<TypeInfoBean>>()
+    var mTypeList = MutableLiveData<ArrayList<PkmTypeInfoBean>>()
 
-    var mTableList = MutableLiveData<ArrayList<TypeInfoBean>>()
+    var mTableList = MutableLiveData<ArrayList<PkmTypeInfoBean>>()
 
     /** 请求属性数据 */
     fun requestData(context: Context){
         CoroutinesWrapper.create(this)
             .request {
                 val list = JSON.parseObject(AES.decrypt(context.getAssetsFileContent(Constant.TYPE_INFO_FILE_NAME), AES.KEY), object:
-                    TypeReference<BaseListBean<TypeInfoBean>>(){})
+                    TypeReference<BaseListBean<PkmTypeInfoBean>>(){})
                 Pair(list.records, getTableList(context, list.records.toArrayList()))
             }
             .action {
@@ -49,9 +49,9 @@ class PokeTypeViewModel :BaseViewModel(){
     }
 
     /** 获取属性相克表数据 */
-    private fun getTableList(context: Context, list: ArrayList<TypeInfoBean>): ArrayList<TypeInfoBean> {
-        val tableList = ArrayList<TypeInfoBean>()
-        tableList.add(TypeInfoBean())
+    private fun getTableList(context: Context, list: ArrayList<PkmTypeInfoBean>): ArrayList<PkmTypeInfoBean> {
+        val tableList = ArrayList<PkmTypeInfoBean>()
+        tableList.add(PkmTypeInfoBean())
         tableList.addAll(list)
         val count = (list.size + 1) * list.size
         var index = 0
@@ -63,7 +63,7 @@ class PokeTypeViewModel :BaseViewModel(){
             }
             val defBean = list[(i- index) % list.size] // 当前空格对应的防守方属性
             val attBean = list[index - 1] // 当前空格对应的进攻方属性
-            val bean = TypeInfoBean()
+            val bean = PkmTypeInfoBean()
             attBean.attDouble.forEach {
                 if (it == defBean.nameCN){
                     bean.nameCN = context.getString(R.string.poke_type_double)

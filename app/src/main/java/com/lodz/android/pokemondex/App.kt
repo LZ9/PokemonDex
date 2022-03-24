@@ -1,6 +1,7 @@
 package com.lodz.android.pokemondex
 
 import android.content.Context
+import com.lodz.android.corekt.network.NetworkManager
 import com.lodz.android.imageloaderkt.ImageloaderManager
 import com.lodz.android.pandora.base.application.BaseApplication
 import com.lodz.android.pokemondex.db.dao.ObjectBox
@@ -12,7 +13,8 @@ import com.lodz.android.pokemondex.db.dao.ObjectBox
 class App : BaseApplication() {
 
     override fun onStartCreate() {
-        initImageLoader(applicationContext)
+        initImageLoader(this)
+        NetworkManager.get().init(this)
         configTitleBarLayout()
         configLoadingLayout()
         ObjectBox.init(this)
@@ -39,7 +41,7 @@ class App : BaseApplication() {
     }
 
     override fun onExit() {
-
-
+        NetworkManager.get().release(this)
+        NetworkManager.get().clearNetworkListener()
     }
 }

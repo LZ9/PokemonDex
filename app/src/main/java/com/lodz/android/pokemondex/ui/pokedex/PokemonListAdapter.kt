@@ -11,7 +11,7 @@ import com.google.android.material.imageview.ShapeableImageView
 import com.lodz.android.imageloaderkt.ImageLoader
 import com.lodz.android.pandora.widget.rv.recycler.BaseRecyclerViewAdapter
 import com.lodz.android.pandora.widget.rv.recycler.DataVBViewHolder
-import com.lodz.android.pokemondex.bean.poke.pkm.PokemonInfoBean
+import com.lodz.android.pokemondex.bean.poke.pkm.PkmInfoBean
 import com.lodz.android.pokemondex.databinding.RvItemPokemonBinding
 
 /**
@@ -19,7 +19,7 @@ import com.lodz.android.pokemondex.databinding.RvItemPokemonBinding
  * @author zhouL
  * @date 2022/3/11
  */
-class PokemonListAdapter(context: Context) :BaseRecyclerViewAdapter<PokemonInfoBean>(context){
+class PokemonListAdapter(context: Context) :BaseRecyclerViewAdapter<PkmInfoBean>(context){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder =
         DataVBViewHolder(getViewBindingLayout(RvItemPokemonBinding::inflate, parent))
 
@@ -32,7 +32,7 @@ class PokemonListAdapter(context: Context) :BaseRecyclerViewAdapter<PokemonInfoB
         showItem(holder, bean, position)
     }
 
-    private fun showItem(holder: DataVBViewHolder, bean: PokemonInfoBean, position: Int) {
+    private fun showItem(holder: DataVBViewHolder, bean: PkmInfoBean, position: Int) {
         holder.getVB<RvItemPokemonBinding>().apply {
             idTv.text = bean.index
             pokeImg.setBackgroundColor(Color.LTGRAY)

@@ -12,7 +12,7 @@ import com.lodz.android.pandora.utils.viewbinding.bindingLayout
 import com.lodz.android.pandora.utils.viewmodel.bindViewModel
 import com.lodz.android.pandora.widget.rv.decoration.GridItemDecoration
 import com.lodz.android.pokemondex.R
-import com.lodz.android.pokemondex.bean.poke.type.TypeInfoBean
+import com.lodz.android.pokemondex.bean.poke.type.PkmTypeInfoBean
 import com.lodz.android.pokemondex.databinding.ActivityPokeTypeBinding
 
 /**
@@ -99,7 +99,7 @@ class PokeTypeActivity : BaseVmActivity() {
         }
     }
 
-    private fun showPopup(view: View, bean: TypeInfoBean) {
+    private fun showPopup(view: View, bean: PkmTypeInfoBean) {
         val popupWindow = PokeTypePopupWindow(getContext(), bean)
         popupWindow.create()
         popupWindow.getPopup().showAsDropDown(view, -50, 20)

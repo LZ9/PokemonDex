@@ -12,7 +12,7 @@ import com.lodz.android.corekt.anko.getDrawableCompat
 import com.lodz.android.pandora.utils.viewbinding.bindingLayout
 import com.lodz.android.pandora.widget.popup.BasePopupWindow
 import com.lodz.android.pokemondex.R
-import com.lodz.android.pokemondex.bean.poke.type.TypeInfoBean
+import com.lodz.android.pokemondex.bean.poke.type.PkmTypeInfoBean
 import com.lodz.android.pokemondex.bean.utils.PokeUtils
 import com.lodz.android.pokemondex.databinding.PopupPokeTypeBinding
 
@@ -21,7 +21,7 @@ import com.lodz.android.pokemondex.databinding.PopupPokeTypeBinding
  * @author zhouL
  * @date 2022/3/17
  */
-class PokeTypePopupWindow(context: Context, val mTypeInfoBean: TypeInfoBean) : BasePopupWindow(context) {
+class PokeTypePopupWindow(context: Context, val mPkmTypeInfoBean: PkmTypeInfoBean) : BasePopupWindow(context) {
 
     private val mBinding: PopupPokeTypeBinding by getContext().bindingLayout(PopupPokeTypeBinding::inflate)
 
@@ -37,21 +37,21 @@ class PokeTypePopupWindow(context: Context, val mTypeInfoBean: TypeInfoBean) : B
         mBinding.attTitleTv.text = getTitleText(getContext().getString(R.string.poke_type_popup_attack))
         mBinding.defTitleTv.text = getTitleText(getContext().getString(R.string.poke_type_popup_defense))
 
-        mBinding.attAdvantageTv.text = getContentText(mTypeInfoBean.attDouble)
-        mBinding.attPoorTv.text = getContentText(mTypeInfoBean.attNotEffective)
-        mBinding.attInvalidTv.text = getContentText(mTypeInfoBean.attInvalid)
-        mBinding.defWeaknessTv.text = getContentText(mTypeInfoBean.defWeakness)
-        mBinding.defAdvantageTv.text = getContentText(mTypeInfoBean.defAdvantage)
-        mBinding.defFullTv.text = getContentText(mTypeInfoBean.defFull)
+        mBinding.attAdvantageTv.text = getContentText(mPkmTypeInfoBean.attDouble)
+        mBinding.attPoorTv.text = getContentText(mPkmTypeInfoBean.attNotEffective)
+        mBinding.attInvalidTv.text = getContentText(mPkmTypeInfoBean.attInvalid)
+        mBinding.defWeaknessTv.text = getContentText(mPkmTypeInfoBean.defWeakness)
+        mBinding.defAdvantageTv.text = getContentText(mPkmTypeInfoBean.defAdvantage)
+        mBinding.defFullTv.text = getContentText(mPkmTypeInfoBean.defFull)
     }
 
     /** 获取标题文字 */
     private fun getTitleText(title: String): SpannableString {
-        val spanStr = SpannableString("[${mTypeInfoBean.nameCN}]".append(title))
+        val spanStr = SpannableString("[${mPkmTypeInfoBean.nameCN}]".append(title))
         spanStr.setSpan(
-            ForegroundColorSpan(getContext().getColorCompat(PokeUtils.getTypeColor(mTypeInfoBean.id))),
+            ForegroundColorSpan(getContext().getColorCompat(PokeUtils.getTypeColor(mPkmTypeInfoBean.id))),
             0,
-            mTypeInfoBean.nameCN.length + 2,
+            mPkmTypeInfoBean.nameCN.length + 2,
             Spanned.SPAN_INCLUSIVE_EXCLUSIVE
         )
         return spanStr

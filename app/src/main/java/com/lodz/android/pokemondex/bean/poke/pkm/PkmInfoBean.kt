@@ -5,7 +5,7 @@ package com.lodz.android.pokemondex.bean.poke.pkm
  * @author zhouL
  * @date 2022/3/22
  */
-class PokemonInfoBean {
+class PkmInfoBean {
 
     /** 序号 */
     var id = 0
@@ -54,4 +54,7 @@ class PokemonInfoBean {
 
     /** 种族值-速度 */
     var speed: Int = 0
+
+    /** 隐藏特性列表 */
+    var evolutionList: ArrayList<ArrayList<PkmEvolutionBean>> = arrayListOf()
 }

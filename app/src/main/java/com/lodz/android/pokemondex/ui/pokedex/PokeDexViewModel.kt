@@ -9,7 +9,8 @@ import com.lodz.android.corekt.anko.toArrayList
 import com.lodz.android.pandora.mvvm.vm.BaseRefreshViewModel
 import com.lodz.android.pandora.utils.coroutines.CoroutinesWrapper
 import com.lodz.android.pokemondex.bean.base.BaseListBean
-import com.lodz.android.pokemondex.bean.poke.pkm.PokemonInfoBean
+import com.lodz.android.pokemondex.bean.poke.pkm.PkmEvolutionBean
+import com.lodz.android.pokemondex.bean.poke.pkm.PkmInfoBean
 import com.lodz.android.pokemondex.config.Constant
 import java.util.ArrayList
 
@@ -19,19 +20,23 @@ import java.util.ArrayList
  */
 class PokeDexViewModel : BaseRefreshViewModel() {
 
-    var mDataList = MutableLiveData<ArrayList<PokemonInfoBean>>()
+    var mDataList = MutableLiveData<ArrayList<PkmInfoBean>>()
 
 
     fun requestDataList(context: Context) {
 
         CoroutinesWrapper.create(this)
             .request {
-                JSON.parseObject(context.getAssetsFileContent(Constant.POKEMON_INFO_FILE_NAME), object: TypeReference<BaseListBean<PokemonInfoBean>>(){})
+                JSON.parseObject(context.getAssetsFileContent(Constant.POKEMON_INFO_FILE_NAME), object: TypeReference<BaseListBean<PkmInfoBean>>(){})
             }
             .action {
                 onSuccess {
                     setSwipeRefreshFinish()
                     mDataList.value = it.records.toArrayList()
+                }
+                onError { e, isNetwork ->
+                    showStatusError(e)
+                    toastShort(e.toString())
                 }
             }
     }

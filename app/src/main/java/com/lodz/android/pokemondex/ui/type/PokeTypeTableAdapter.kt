@@ -8,7 +8,7 @@ import com.lodz.android.corekt.anko.getColorCompat
 import com.lodz.android.pandora.widget.rv.recycler.BaseRecyclerViewAdapter
 import com.lodz.android.pandora.widget.rv.recycler.DataVBViewHolder
 import com.lodz.android.pokemondex.R
-import com.lodz.android.pokemondex.bean.poke.type.TypeInfoBean
+import com.lodz.android.pokemondex.bean.poke.type.PkmTypeInfoBean
 import com.lodz.android.pokemondex.bean.utils.PokeUtils
 import com.lodz.android.pokemondex.databinding.RvItemPokeTypeBinding
 
@@ -17,7 +17,7 @@ import com.lodz.android.pokemondex.databinding.RvItemPokeTypeBinding
  * @author zhouL
  * @date 2022/3/16
  */
-class PokeTypeTableAdapter(context: Context) : BaseRecyclerViewAdapter<TypeInfoBean>(context) {
+class PokeTypeTableAdapter(context: Context) : BaseRecyclerViewAdapter<PkmTypeInfoBean>(context) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder =
         DataVBViewHolder(getViewBindingLayout(RvItemPokeTypeBinding::inflate, parent))
@@ -31,7 +31,7 @@ class PokeTypeTableAdapter(context: Context) : BaseRecyclerViewAdapter<TypeInfoB
         showItem(holder, bean, position)
     }
 
-    private fun showItem(holder: DataVBViewHolder, bean: TypeInfoBean, position: Int) {
+    private fun showItem(holder: DataVBViewHolder, bean: PkmTypeInfoBean, position: Int) {
         holder.getVB<RvItemPokeTypeBinding>().apply {
             if (position == 0) {//起始区域
                 textTv.text = ""

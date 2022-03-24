@@ -5,7 +5,7 @@ package com.lodz.android.pokemondex.bean.poke.type
  * @author zhouL
  * @date 2022/3/15
  */
-class TypeInfoBean {
+class PkmTypeInfoBean {
     /** 编号 */
     var id: Int = 0
 

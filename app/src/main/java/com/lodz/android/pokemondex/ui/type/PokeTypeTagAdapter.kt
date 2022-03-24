@@ -13,7 +13,7 @@ import com.lodz.android.corekt.anko.getColorCompat
 import com.lodz.android.corekt.utils.SelectorUtils
 import com.lodz.android.pandora.widget.rv.recycler.BaseRecyclerViewAdapter
 import com.lodz.android.pandora.widget.rv.recycler.DataVBViewHolder
-import com.lodz.android.pokemondex.bean.poke.type.TypeInfoBean
+import com.lodz.android.pokemondex.bean.poke.type.PkmTypeInfoBean
 import com.lodz.android.pokemondex.bean.utils.PokeUtils
 import com.lodz.android.pokemondex.databinding.RvItemPokeTypeTagBinding
 
@@ -22,7 +22,7 @@ import com.lodz.android.pokemondex.databinding.RvItemPokeTypeTagBinding
  * @author zhouL
  * @date 2022/3/16
  */
-class PokeTypeTagAdapter(context: Context) : BaseRecyclerViewAdapter<TypeInfoBean>(context) {
+class PokeTypeTagAdapter(context: Context) : BaseRecyclerViewAdapter<PkmTypeInfoBean>(context) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder =
         DataVBViewHolder(getViewBindingLayout(RvItemPokeTypeTagBinding::inflate, parent))
@@ -36,7 +36,7 @@ class PokeTypeTagAdapter(context: Context) : BaseRecyclerViewAdapter<TypeInfoBea
         showItem(holder, bean)
     }
 
-    private fun showItem(holder: DataVBViewHolder, bean: TypeInfoBean) {
+    private fun showItem(holder: DataVBViewHolder, bean: PkmTypeInfoBean) {
         holder.getVB<RvItemPokeTypeTagBinding>().apply {
             tagTv.text = bean.nameCN
             tagTv.setTextColor(Color.WHITE)
@@ -51,7 +51,7 @@ class PokeTypeTagAdapter(context: Context) : BaseRecyclerViewAdapter<TypeInfoBea
         }
     }
 
-    private fun getBgDrawable(shapeModel: ShapeAppearanceModel, bean: TypeInfoBean): MaterialShapeDrawable =
+    private fun getBgDrawable(shapeModel: ShapeAppearanceModel, bean: PkmTypeInfoBean): MaterialShapeDrawable =
         MaterialShapeDrawable(shapeModel).apply {
             setTint(context.getColorCompat(PokeUtils.getTypeColor(bean.id)))
             paintStyle = Paint.Style.FILL

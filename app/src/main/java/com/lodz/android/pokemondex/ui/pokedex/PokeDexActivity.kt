@@ -61,6 +61,12 @@ class PokeDexActivity : BaseRefreshVmActivity() {
         finish()
     }
 
+    override fun onClickReload() {
+        super.onClickReload()
+        showStatusLoading()
+        mViewModel.requestDataList(getContext())
+    }
+
     override fun onDataRefresh() {
         mViewModel.requestDataList(getContext())
     }
