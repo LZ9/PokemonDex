@@ -55,6 +55,6 @@ class PkmInfoBean {
     /** 种族值-速度 */
     var speed: Int = 0
 
-    /** 隐藏特性列表 */
+    /** 进化列表 */
     var evolutionList: ArrayList<ArrayList<PkmEvolutionBean>> = arrayListOf()
 }

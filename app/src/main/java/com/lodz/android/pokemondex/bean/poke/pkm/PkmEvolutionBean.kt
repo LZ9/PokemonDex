@@ -1,7 +1,7 @@
 package com.lodz.android.pokemondex.bean.poke.pkm
 
 /**
- * 宝可梦进化
+ * 宝可梦进化信息实体
  * @author zhouL
  * @date 2022/3/24
  */
