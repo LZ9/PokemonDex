@@ -1,6 +1,8 @@
 package com.lodz.android.pokemondex
 
 import android.content.Context
+import com.fasterxml.jackson.databind.MapperFeature
+import com.fasterxml.jackson.databind.ObjectMapper
 import com.lodz.android.corekt.network.NetworkManager
 import com.lodz.android.imageloaderkt.ImageloaderManager
 import com.lodz.android.pandora.base.application.BaseApplication
@@ -38,6 +40,11 @@ class App : BaseApplication() {
             .setDirectoryFile(context.cacheDir)// 设置缓存路径
             .setDirectoryName("image_cache")// 缓存文件夹名称
             .build()
+    }
+
+    override fun configJackson(objectMapper: ObjectMapper) {
+        super.configJackson(objectMapper)
+        objectMapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true)//忽略大小写
     }
 
     override fun onExit() {

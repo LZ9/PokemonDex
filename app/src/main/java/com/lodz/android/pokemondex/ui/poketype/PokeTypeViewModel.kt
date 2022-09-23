@@ -2,13 +2,12 @@ package com.lodz.android.pokemondex.ui.poketype
 
 import android.content.Context
 import androidx.lifecycle.MutableLiveData
-import com.alibaba.fastjson.JSON
-import com.alibaba.fastjson.TypeReference
 import com.lodz.android.corekt.anko.getAssetsFileContent
 import com.lodz.android.corekt.anko.toArrayList
 import com.lodz.android.corekt.security.AES
 import com.lodz.android.pandora.mvvm.vm.BaseViewModel
 import com.lodz.android.pandora.utils.coroutines.CoroutinesWrapper
+import com.lodz.android.pandora.utils.jackson.parseJsonObject
 import com.lodz.android.pokemondex.R
 import com.lodz.android.pokemondex.bean.base.BaseListBean
 import com.lodz.android.pokemondex.bean.poke.type.PkmTypeInfoBean
@@ -30,8 +29,8 @@ class PokeTypeViewModel :BaseViewModel(){
     fun requestData(context: Context){
         CoroutinesWrapper.create(this)
             .request {
-                val list = JSON.parseObject(AES.decrypt(context.getAssetsFileContent(Constant.TYPE_INFO_FILE_NAME), AES.KEY), object:
-                    TypeReference<BaseListBean<PkmTypeInfoBean>>(){})
+                val json = AES.decrypt(context.getAssetsFileContent(Constant.TYPE_INFO_FILE_NAME), AES.KEY) ?: ""
+                val list = json.parseJsonObject<BaseListBean<PkmTypeInfoBean>>()
                 Pair(list.records, getTableList(context, list.records.toArrayList()))
             }
             .action {

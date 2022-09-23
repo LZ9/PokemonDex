@@ -1,11 +1,13 @@
 package com.lodz.android.pokemondex.bean.poke.pkm
 
+import com.lodz.android.pandora.widget.rv.tree.RvTreeItem
+
 /**
  * 宝可梦信息实体
  * @author zhouL
  * @date 2022/3/22
  */
-class PkmInfoBean {
+class PkmInfoBean : RvTreeItem {
 
     /** 序号 */
     var id = 0
@@ -57,4 +59,10 @@ class PkmInfoBean {
 
     /** 进化列表 */
     var evolutionList: ArrayList<ArrayList<PkmEvolutionBean>> = arrayListOf()
+
+    override fun fetchItemId(): String  = index
+
+    override fun fetchParentId(): String = generation.toString()
+
+    override fun isRootItem(): Boolean = false
 }

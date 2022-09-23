@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.lodz.android.corekt.anko.toastShort
 import com.lodz.android.pandora.mvvm.base.activity.BaseRefreshVmActivity
 import com.lodz.android.pandora.utils.viewbinding.bindingLayout
 import com.lodz.android.pandora.utils.viewmodel.bindViewModel
@@ -72,9 +71,6 @@ class PokeDexActivity : BaseRefreshVmActivity() {
 
     override fun setListeners() {
         super.setListeners()
-        mAdapter.setOnItemClickListener { viewHolder, item, position ->
-            toastShort(item.getGenStr())
-        }
     }
 
     override fun setViewModelObserves() {

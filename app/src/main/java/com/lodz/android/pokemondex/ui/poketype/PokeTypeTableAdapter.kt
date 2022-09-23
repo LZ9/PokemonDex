@@ -5,8 +5,8 @@ import android.graphics.Color
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.lodz.android.corekt.anko.getColorCompat
-import com.lodz.android.pandora.widget.rv.recycler.BaseRecyclerViewAdapter
-import com.lodz.android.pandora.widget.rv.recycler.DataVBViewHolder
+import com.lodz.android.pandora.widget.rv.recycler.base.BaseRvAdapter
+import com.lodz.android.pandora.widget.rv.recycler.vh.DataVBViewHolder
 import com.lodz.android.pokemondex.R
 import com.lodz.android.pokemondex.bean.poke.type.PkmTypeInfoBean
 import com.lodz.android.pokemondex.utils.PokeUtils
@@ -17,7 +17,7 @@ import com.lodz.android.pokemondex.databinding.RvItemPokeTypeBinding
  * @author zhouL
  * @date 2022/3/16
  */
-class PokeTypeTableAdapter(context: Context) : BaseRecyclerViewAdapter<PkmTypeInfoBean>(context) {
+class PokeTypeTableAdapter(context: Context) : BaseRvAdapter<PkmTypeInfoBean>(context) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder =
         DataVBViewHolder(getViewBindingLayout(RvItemPokeTypeBinding::inflate, parent))

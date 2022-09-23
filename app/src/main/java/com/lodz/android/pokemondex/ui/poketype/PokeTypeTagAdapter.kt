@@ -11,8 +11,8 @@ import com.google.android.material.shape.ShapeAppearanceModel
 import com.lodz.android.corekt.anko.dp2pxRF
 import com.lodz.android.corekt.anko.getColorCompat
 import com.lodz.android.corekt.utils.SelectorUtils
-import com.lodz.android.pandora.widget.rv.recycler.BaseRecyclerViewAdapter
-import com.lodz.android.pandora.widget.rv.recycler.DataVBViewHolder
+import com.lodz.android.pandora.widget.rv.recycler.base.BaseRvAdapter
+import com.lodz.android.pandora.widget.rv.recycler.vh.DataVBViewHolder
 import com.lodz.android.pokemondex.bean.poke.type.PkmTypeInfoBean
 import com.lodz.android.pokemondex.utils.PokeUtils
 import com.lodz.android.pokemondex.databinding.RvItemPokeTypeTagBinding
@@ -22,7 +22,7 @@ import com.lodz.android.pokemondex.databinding.RvItemPokeTypeTagBinding
  * @author zhouL
  * @date 2022/3/16
  */
-class PokeTypeTagAdapter(context: Context) : BaseRecyclerViewAdapter<PkmTypeInfoBean>(context) {
+class PokeTypeTagAdapter(context: Context) : BaseRvAdapter<PkmTypeInfoBean>(context) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder =
         DataVBViewHolder(getViewBindingLayout(RvItemPokeTypeTagBinding::inflate, parent))
