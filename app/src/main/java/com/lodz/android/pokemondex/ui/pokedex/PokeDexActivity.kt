@@ -4,11 +4,11 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.lodz.android.pandora.mvvm.base.activity.BaseRefreshVmActivity
 import com.lodz.android.pandora.utils.viewbinding.bindingLayout
 import com.lodz.android.pandora.utils.viewmodel.bindViewModel
+import com.lodz.android.pandora.widget.rv.anko.grid
+import com.lodz.android.pandora.widget.rv.anko.setup
 import com.lodz.android.pokemondex.R
 import com.lodz.android.pokemondex.databinding.ActivityPokedexListBinding
 
@@ -45,13 +45,8 @@ class PokeDexActivity : BaseRefreshVmActivity() {
     }
 
     private fun initRecyclerView() {
-        mAdapter = PokemonListAdapter(getContext())
-        val layoutManager = LinearLayoutManager(getContext())
-        layoutManager.orientation = RecyclerView.VERTICAL
-        mBinding.recyclerView.layoutManager = layoutManager
-        mAdapter.onAttachedToRecyclerView(mBinding.recyclerView)// 如果使用网格布局请设置此方法
-        mBinding.recyclerView.setHasFixedSize(true)
-        mBinding.recyclerView.adapter = mAdapter
+        mAdapter = mBinding.recyclerView.grid(2)
+            .setup(PokemonListAdapter(getContext()))
     }
 
     override fun onClickBackBtn() {
@@ -76,7 +71,7 @@ class PokeDexActivity : BaseRefreshVmActivity() {
     override fun setViewModelObserves() {
         super.setViewModelObserves()
         mViewModel.mDataList.observe(getLifecycleOwner()) {
-            mAdapter.setData(it)
+            mAdapter.setTreeData(it)
         }
     }
 

@@ -60,7 +60,7 @@ class PkmInfoBean : RvTreeItem {
     /** 进化列表 */
     var evolutionList: ArrayList<ArrayList<PkmEvolutionBean>> = arrayListOf()
 
-    override fun fetchItemId(): String  = index
+    override fun fetchItemId(): String  = id.toString()
 
     override fun fetchParentId(): String = generation.toString()
 

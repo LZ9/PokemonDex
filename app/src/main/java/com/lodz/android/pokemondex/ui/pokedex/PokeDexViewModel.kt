@@ -6,7 +6,6 @@ import com.lodz.android.corekt.anko.getAssetsFileContent
 import com.lodz.android.pandora.mvvm.vm.BaseRefreshViewModel
 import com.lodz.android.pandora.utils.coroutines.CoroutinesWrapper
 import com.lodz.android.pandora.utils.jackson.parseJsonObject
-import com.lodz.android.pandora.widget.rv.tree.RvTreeItem
 import com.lodz.android.pokemondex.bean.base.BaseListBean
 import com.lodz.android.pokemondex.bean.poke.pkm.PkmGenBean
 import com.lodz.android.pokemondex.bean.poke.pkm.PkmInfoBean
@@ -18,7 +17,7 @@ import com.lodz.android.pokemondex.config.Constant
  */
 class PokeDexViewModel : BaseRefreshViewModel() {
 
-    var mDataList = MutableLiveData<ArrayList<RvTreeItem>>()
+    var mDataList = MutableLiveData<ArrayList<PkmGenBean>>()
 
     fun requestDataList(context: Context) {
 
@@ -27,7 +26,7 @@ class PokeDexViewModel : BaseRefreshViewModel() {
             .action {
                 onSuccess {
                     setSwipeRefreshFinish()
-                    mDataList.value = ArrayList(it)
+                    mDataList.value = it
                     showStatusCompleted()
                 }
                 onError { e, isNetwork ->
@@ -88,6 +87,7 @@ class PokeDexViewModel : BaseRefreshViewModel() {
     private fun createPkmGenBean(gen: Int): PkmGenBean {
         val bean = PkmGenBean()
         bean.generation = gen
+        bean.isExpand = gen == 1
         return bean
     }
 }

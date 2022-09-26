@@ -16,7 +16,7 @@
 
     <style name="cornerImageStyle">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">26dp</item>
+        <item name="cornerSize">0dp</item>
     </style>
 
 </resources>

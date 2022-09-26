@@ -17,7 +17,7 @@ class PkmGenBean : RvTreeGroup {
     /** 宝可梦列表 */
     var pkmList: ArrayList<PkmInfoBean> = arrayListOf()
 
-    private var isExpand: Boolean = false
+    var isExpand: Boolean = false
 
     fun getGenStr(): String = when (generation) {
         Constant.POKE_GENERATION_1 -> "第一世代"
