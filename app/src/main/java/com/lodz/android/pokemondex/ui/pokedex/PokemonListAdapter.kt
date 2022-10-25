@@ -79,7 +79,7 @@ class PokemonListAdapter(context: Context) : BaseTreeRvAdapter<PkmGenBean, DataV
                     .with(url)
                     .use(BitmapPalette.Profile.MUTED_LIGHT)
                     .intoCallBack {
-                        val rgb = it?.dominantSwatch?.rgb
+                        val rgb = it?.lightMutedSwatch?.rgb
                         if (rgb != null) {
                             pokeImg.setBackgroundColor(rgb)
                         }

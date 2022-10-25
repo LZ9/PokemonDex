@@ -49,27 +49,35 @@ class PokeDexViewModel : BaseRefreshViewModel() {
         for (item in bean.records) {
             if (item.generation == Constant.POKE_GENERATION_1) {
                 gen1Bean.pkmList.add(item)
+                continue
             }
             if (item.generation == Constant.POKE_GENERATION_2) {
                 gen2Bean.pkmList.add(item)
+                continue
             }
             if (item.generation == Constant.POKE_GENERATION_3) {
                 gen3Bean.pkmList.add(item)
+                continue
             }
             if (item.generation == Constant.POKE_GENERATION_4) {
                 gen4Bean.pkmList.add(item)
+                continue
             }
             if (item.generation == Constant.POKE_GENERATION_5) {
                 gen5Bean.pkmList.add(item)
+                continue
             }
             if (item.generation == Constant.POKE_GENERATION_6) {
                 gen6Bean.pkmList.add(item)
+                continue
             }
             if (item.generation == Constant.POKE_GENERATION_7) {
                 gen7Bean.pkmList.add(item)
+                continue
             }
             if (item.generation == Constant.POKE_GENERATION_8) {
                 gen8Bean.pkmList.add(item)
+                continue
             }
         }
         val list = ArrayList<PkmGenBean>()

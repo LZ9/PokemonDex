@@ -10,7 +10,8 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:padding="10dp">
+        android:padding="10dp"
+        tools:ignore="UseCompoundDrawables">
 
         <TextView
             android:id="@+id/gen_tv"
