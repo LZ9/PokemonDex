@@ -12,7 +12,7 @@ import com.lodz.android.pandora.utils.viewbinding.bindingLayout
 import com.lodz.android.pandora.widget.contract.OnAppBarStateChangeListener
 import com.lodz.android.pokemondex.R
 import com.lodz.android.pokemondex.databinding.ActivityMainBinding
-import com.lodz.android.pokemondex.ui.pokedex.PokeDexActivity
+import com.lodz.android.pokemondex.ui.pokedex.list.PokeDexActivity
 import com.lodz.android.pokemondex.ui.poketype.PokeTypeActivity
 
 class MainActivity : AbsActivity() {

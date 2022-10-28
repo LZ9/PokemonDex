@@ -1,4 +1,4 @@
-package com.lodz.android.pokemondex.ui.pokedex
+package com.lodz.android.pokemondex.ui.pokedex.list
 
 import android.content.Context
 import android.content.Intent
@@ -12,7 +12,10 @@ import com.lodz.android.pandora.utils.viewmodel.bindViewModel
 import com.lodz.android.pandora.widget.rv.anko.grid
 import com.lodz.android.pandora.widget.rv.anko.setup
 import com.lodz.android.pokemondex.R
+import com.lodz.android.pokemondex.bean.poke.pkm.PkmInfoBean
 import com.lodz.android.pokemondex.databinding.ActivityPokedexListBinding
+import com.lodz.android.pokemondex.db.table.PokemonInfoTableCursor
+import com.lodz.android.pokemondex.ui.pokedex.detail.PokemonDetailActivity
 
 /**
  * 图鉴页面
@@ -71,6 +74,13 @@ class PokeDexActivity : BaseRefreshVmActivity() {
 
     override fun setListeners() {
         super.setListeners()
+
+        mAdapter.setOnItemClickListener { viewHolder, item, position ->
+            if (item is PkmInfoBean){
+                PokemonDetailActivity.start(getContext(), item.id, item.name)
+            }
+        }
+
         mBinding.searchBarLayout.setOnSearchClickListener {
             it.hideInputMethod()
             setSwipeRefreshStatus(true)

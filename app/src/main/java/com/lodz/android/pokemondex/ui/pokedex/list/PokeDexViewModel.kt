@@ -1,4 +1,4 @@
-package com.lodz.android.pokemondex.ui.pokedex
+package com.lodz.android.pokemondex.ui.pokedex.list
 
 import android.content.Context
 import androidx.lifecycle.MutableLiveData
@@ -10,6 +10,7 @@ import com.lodz.android.pokemondex.bean.base.BaseListBean
 import com.lodz.android.pokemondex.bean.poke.pkm.PkmGenBean
 import com.lodz.android.pokemondex.bean.poke.pkm.PkmInfoBean
 import com.lodz.android.pokemondex.config.Constant
+import com.lodz.android.pokemondex.utils.PokeUtils
 
 /**
  * @author zhouL
@@ -27,8 +28,7 @@ class PokeDexViewModel : BaseRefreshViewModel() {
         CoroutinesWrapper.create(this)
             .request {
                 if (mDataList.isEmpty()){
-                    val list = context.getAssetsFileContent(Constant.POKEMON_INFO_FILE_NAME).parseJsonObject<BaseListBean<PkmInfoBean>>()
-                    mDataList = list.records
+                    mDataList = PokeUtils.getPokemonList(context)
                 }
                 if (content.isEmpty()) {
                     return@request getDataMap(mDataList)

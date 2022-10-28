@@ -1,4 +1,4 @@
-package com.lodz.android.pokemondex.ui.pokedex
+package com.lodz.android.pokemondex.ui.pokedex.list
 
 import android.content.Context
 import android.graphics.*
@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
-import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.github.florent37.glidepalette.BitmapPalette
 import com.github.florent37.glidepalette.GlidePalette
 import com.lodz.android.corekt.anko.startRotateSelf
