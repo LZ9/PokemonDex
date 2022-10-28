@@ -2057,80 +2057,112 @@
       "weight": "18.6kg"
     },
     {
-      "abilitiesList": [],
-      "attack": 0,
-      "defense": 0,
+      "abilitiesList": [
+        "孢子",
+        "干燥皮肤"
+      ],
+      "attack": 70,
+      "defense": 55,
       "evolutionList": [],
       "generation": 1,
-      "height": "",
-      "hideAbilitiesList": [],
-      "hp": 0,
-      "id": 0,
+      "height": "0.3m",
+      "hideAbilitiesList": [
+        "湿气"
+      ],
+      "hp": 35,
+      "id": 59,
       "imgUrl": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/046.png",
       "index": "#046",
-      "name": "",
-      "specialAttack": 0,
-      "specialDefense": 0,
-      "speed": 0,
-      "typesList": [],
-      "weight": ""
+      "name": "派拉斯",
+      "specialAttack": 45,
+      "specialDefense": 55,
+      "speed": 25,
+      "typesList": [
+        "虫",
+        "草"
+      ],
+      "weight": "5.4kg"
     },
     {
-      "abilitiesList": [],
-      "attack": 0,
-      "defense": 0,
+      "abilitiesList": [
+        "孢子",
+        "干燥皮肤"
+      ],
+      "attack": 95,
+      "defense": 80,
       "evolutionList": [],
       "generation": 1,
-      "height": "",
-      "hideAbilitiesList": [],
-      "hp": 0,
-      "id": 0,
+      "height": "1.0m",
+      "hideAbilitiesList": [
+        "湿气"
+      ],
+      "hp": 60,
+      "id": 60,
       "imgUrl": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/047.png",
       "index": "#047",
-      "name": "",
-      "specialAttack": 0,
-      "specialDefense": 0,
-      "speed": 0,
-      "typesList": [],
-      "weight": ""
+      "name": "派拉斯特",
+      "specialAttack": 60,
+      "specialDefense": 80,
+      "speed": 30,
+      "typesList": [
+        "虫",
+        "草"
+      ],
+      "weight": "29.5kg"
     },
     {
-      "abilitiesList": [],
-      "attack": 0,
-      "defense": 0,
+      "abilitiesList": [
+        "复眼",
+        "有色眼镜"
+      ],
+      "attack": 55,
+      "defense": 50,
       "evolutionList": [],
       "generation": 1,
-      "height": "",
-      "hideAbilitiesList": [],
-      "hp": 0,
-      "id": 0,
+      "height": "1.0m",
+      "hideAbilitiesList": [
+        "逃跑"
+      ],
+      "hp": 60,
+      "id": 61,
       "imgUrl": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/048.png",
       "index": "#048",
-      "name": "",
-      "specialAttack": 0,
-      "specialDefense": 0,
-      "speed": 0,
-      "typesList": [],
-      "weight": ""
+      "name": "毛球",
+      "specialAttack": 40,
+      "specialDefense": 55,
+      "speed": 45,
+      "typesList": [
+        "虫",
+        "毒"
+      ],
+      "weight": "30.0kg"
     },
     {
-      "abilitiesList": [],
-      "attack": 0,
-      "defense": 0,
+      "abilitiesList": [
+        "鳞粉",
+        "有色眼镜"
+      ],
+      "attack": 65,
+      "defense": 60,
       "evolutionList": [],
       "generation": 1,
-      "height": "",
-      "hideAbilitiesList": [],
-      "hp": 0,
-      "id": 0,
+      "height": "1.5m",
+      "hideAbilitiesList": [
+        "奇迹皮肤"
+      ],
+      "hp": 70,
+      "id": 62,
       "imgUrl": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/049.png",
       "index": "#049",
-      "name": "",
-      "specialAttack": 0,
-      "specialDefense": 0,
-      "speed": 0,
-      "typesList": [],
-      "weight": ""
+      "name": "摩鲁蛾",
+      "specialAttack": 90,
+      "specialDefense": 75,
+      "speed": 90,
+      "typesList": [
+        "虫",
+        "毒"
+      ],
+      "weight": "12.5kg"
     },
     {
       "abilitiesList": [],

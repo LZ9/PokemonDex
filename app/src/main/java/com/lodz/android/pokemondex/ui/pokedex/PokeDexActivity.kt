@@ -45,7 +45,7 @@ class PokeDexActivity : BaseRefreshVmActivity() {
     }
 
     private fun initRecyclerView() {
-        mAdapter = mBinding.recyclerView.grid(3)
+        mAdapter = mBinding.recyclerView.grid(2)
             .setup(PokemonListAdapter(getContext()))
     }
 

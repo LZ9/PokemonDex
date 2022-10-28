@@ -2,11 +2,14 @@ package com.lodz.android.pokemondex.ui.pokedex
 
 import android.content.Context
 import android.graphics.*
+import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.cardview.widget.CardView
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.github.florent37.glidepalette.BitmapPalette
 import com.github.florent37.glidepalette.GlidePalette
-import com.google.android.material.imageview.ShapeableImageView
 import com.lodz.android.corekt.anko.startRotateSelf
 import com.lodz.android.imageloaderkt.ImageLoader
 import com.lodz.android.pandora.widget.rv.recycler.vh.DataVBViewHolder
@@ -15,6 +18,7 @@ import com.lodz.android.pokemondex.bean.poke.pkm.PkmGenBean
 import com.lodz.android.pokemondex.bean.poke.pkm.PkmInfoBean
 import com.lodz.android.pokemondex.databinding.RvItemGenBinding
 import com.lodz.android.pokemondex.databinding.RvItemPokemonBinding
+import java.util.ArrayList
 
 /**
  * 宝可梦列表适配器
@@ -64,13 +68,30 @@ class PokemonListAdapter(context: Context) : BaseTreeRvAdapter<PkmGenBean, DataV
 
     private fun showPkmUI(holder: DataVBViewHolder, bean: PkmInfoBean) {
         holder.getVB<RvItemPokemonBinding>().apply {
-            idTv.text = bean.index
-            pokeImg.setBackgroundColor(Color.LTGRAY)
-            showImg(pokeImg, bean.imgUrl)
+            cardLayout.setCardBackgroundColor(Color.LTGRAY)
+            indexTv.text = bean.index
+            nameTv.text = bean.name
+            showTypes(typeFirstTv, typeSecondTv, bean.typesList)
+            showImg(cardLayout, pokeImg, bean.imgUrl)
         }
     }
 
-    private fun showImg(pokeImg: ShapeableImageView, url: String) {
+    /** 显示属性 */
+    private fun showTypes(firstTv: TextView, secondTv: TextView, list: ArrayList<String>) {
+        firstTv.visibility = View.INVISIBLE
+        secondTv.visibility = View.INVISIBLE
+        if (list.size >= 1) {
+            firstTv.text = list[0]
+            firstTv.visibility = View.VISIBLE
+        }
+        if (list.size >= 2) {
+            secondTv.text = list[1]
+            secondTv.visibility = View.VISIBLE
+        }
+    }
+
+    /** 显示宝可梦图片 */
+    private fun showImg(layout: CardView, pokeImg: ImageView, url: String) {
         ImageLoader.create(context)
             .loadUrl(url)
             .diskCacheStrategy(DiskCacheStrategy.ALL)
@@ -81,7 +102,7 @@ class PokemonListAdapter(context: Context) : BaseTreeRvAdapter<PkmGenBean, DataV
                     .intoCallBack {
                         val rgb = it?.lightMutedSwatch?.rgb
                         if (rgb != null) {
-                            pokeImg.setBackgroundColor(rgb)
+                            layout.setCardBackgroundColor(rgb)
                         }
                     }
                     .crossfade(true)
