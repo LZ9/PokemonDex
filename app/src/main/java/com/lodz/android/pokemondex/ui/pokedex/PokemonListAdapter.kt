@@ -94,7 +94,6 @@ class PokemonListAdapter(context: Context) : BaseTreeRvAdapter<PkmGenBean, DataV
     private fun showImg(layout: CardView, pokeImg: ImageView, url: String) {
         ImageLoader.create(context)
             .loadUrl(url)
-            .diskCacheStrategy(DiskCacheStrategy.ALL)
             .into(pokeImg,
                 GlidePalette
                     .with(url)

@@ -17,16 +17,28 @@ import com.lodz.android.pokemondex.config.Constant
  */
 class PokeDexViewModel : BaseRefreshViewModel() {
 
-    var mDataList = MutableLiveData<ArrayList<PkmGenBean>>()
+    /** 宝可梦数据列表 */
+    private var mDataList: ArrayList<PkmInfoBean> = arrayListOf()
+    /** 筛选后的数据 */
+    var mFilterList = MutableLiveData<ArrayList<PkmGenBean>>()
 
-    fun requestDataList(context: Context) {
-
+    /** 查询宝可梦数据列表，上下文[context]，关键字[content] */
+    fun requestDataList(context: Context, content: String) {
         CoroutinesWrapper.create(this)
-            .request { getDataMap(context.getAssetsFileContent(Constant.POKEMON_INFO_FILE_NAME).parseJsonObject()) }
+            .request {
+                if (mDataList.isEmpty()){
+                    val list = context.getAssetsFileContent(Constant.POKEMON_INFO_FILE_NAME).parseJsonObject<BaseListBean<PkmInfoBean>>()
+                    mDataList = list.records
+                }
+                if (content.isEmpty()) {
+                    return@request getDataMap(mDataList)
+                }
+                return@request getDataMap(filterData(mDataList, content))
+            }
             .action {
                 onSuccess {
                     setSwipeRefreshFinish()
-                    mDataList.value = it
+                    mFilterList.value = it
                     showStatusCompleted()
                 }
                 onError { e, isNetwork ->
@@ -36,7 +48,19 @@ class PokeDexViewModel : BaseRefreshViewModel() {
             }
     }
 
-    private fun getDataMap(bean: BaseListBean<PkmInfoBean>): ArrayList<PkmGenBean> {
+    /** 过滤数据 */
+    private fun filterData(data: List<PkmInfoBean>, content: String): List<PkmInfoBean> {
+        val list = arrayListOf<PkmInfoBean>()
+        data.forEach {
+            if (it.name.contains(content)) {
+                list.add(it)
+            }
+        }
+        return list
+    }
+
+    /** 数据分级 */
+    private fun getDataMap(data: List<PkmInfoBean>): ArrayList<PkmGenBean> {
         val gen1Bean = createPkmGenBean(Constant.POKE_GENERATION_1)
         val gen2Bean = createPkmGenBean(Constant.POKE_GENERATION_2)
         val gen3Bean = createPkmGenBean(Constant.POKE_GENERATION_3)
@@ -46,7 +70,7 @@ class PokeDexViewModel : BaseRefreshViewModel() {
         val gen7Bean = createPkmGenBean(Constant.POKE_GENERATION_7)
         val gen8Bean = createPkmGenBean(Constant.POKE_GENERATION_8)
 
-        for (item in bean.records) {
+        for (item in data) {
             if (item.generation == Constant.POKE_GENERATION_1) {
                 gen1Bean.pkmList.add(item)
                 continue
@@ -81,14 +105,30 @@ class PokeDexViewModel : BaseRefreshViewModel() {
             }
         }
         val list = ArrayList<PkmGenBean>()
-        list.add(gen1Bean)
-        list.add(gen2Bean)
-        list.add(gen3Bean)
-        list.add(gen4Bean)
-        list.add(gen5Bean)
-        list.add(gen6Bean)
-        list.add(gen7Bean)
-        list.add(gen8Bean)
+        if (gen1Bean.pkmList.size > 0){
+            list.add(gen1Bean)
+        }
+        if (gen2Bean.pkmList.size > 0){
+            list.add(gen2Bean)
+        }
+        if (gen3Bean.pkmList.size > 0){
+            list.add(gen3Bean)
+        }
+        if (gen4Bean.pkmList.size > 0){
+            list.add(gen4Bean)
+        }
+        if (gen5Bean.pkmList.size > 0){
+            list.add(gen5Bean)
+        }
+        if (gen6Bean.pkmList.size > 0){
+            list.add(gen6Bean)
+        }
+        if (gen7Bean.pkmList.size > 0){
+            list.add(gen7Bean)
+        }
+        if (gen8Bean.pkmList.size > 0){
+            list.add(gen8Bean)
+        }
         return list
     }
 

@@ -4,6 +4,8 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.view.inputmethod.EditorInfo
+import com.lodz.android.corekt.anko.hideInputMethod
 import com.lodz.android.pandora.mvvm.base.activity.BaseRefreshVmActivity
 import com.lodz.android.pandora.utils.viewbinding.bindingLayout
 import com.lodz.android.pandora.utils.viewmodel.bindViewModel
@@ -36,12 +38,15 @@ class PokeDexActivity : BaseRefreshVmActivity() {
 
     /** 适配器 */
     private lateinit var mAdapter: PokemonListAdapter
+    /** 搜索关键字 */
+    private var mContentStr = ""
 
     override fun findViews(savedInstanceState: Bundle?) {
         super.findViews(savedInstanceState)
         getTitleBarLayout().setTitleName(R.string.main_pokedex)
         getTitleBarLayout().elevation = 0f
         initRecyclerView()
+        mBinding.searchBarLayout.getInputEdit().imeOptions = EditorInfo.IME_ACTION_DONE
     }
 
     private fun initRecyclerView() {
@@ -57,20 +62,47 @@ class PokeDexActivity : BaseRefreshVmActivity() {
     override fun onClickReload() {
         super.onClickReload()
         showStatusLoading()
-        mViewModel.requestDataList(getContext())
+        mViewModel.requestDataList(getContext(), mContentStr)
     }
 
     override fun onDataRefresh() {
-        mViewModel.requestDataList(getContext())
+        mViewModel.requestDataList(getContext(), mContentStr)
     }
 
     override fun setListeners() {
         super.setListeners()
+        mBinding.searchBarLayout.setOnSearchClickListener {
+            it.hideInputMethod()
+            setSwipeRefreshStatus(true)
+            searchData()
+        }
+
+        mBinding.searchBarLayout.setOnCleanClickListener {
+            it.hideInputMethod()
+            setSwipeRefreshStatus(true)
+            searchData()
+        }
+
+        mBinding.searchBarLayout.getInputEdit().setOnEditorActionListener { v, actionId, event ->
+            v.hideInputMethod()
+            if (actionId == EditorInfo.IME_ACTION_DONE) {
+                setSwipeRefreshStatus(true)
+                searchData()
+                return@setOnEditorActionListener true
+            }
+            return@setOnEditorActionListener false
+        }
+    }
+
+    /** 搜索数据 */
+    private fun searchData() {
+        mContentStr = mBinding.searchBarLayout.getInputText()
+        mViewModel.requestDataList(getContext(), mContentStr)
     }
 
     override fun setViewModelObserves() {
         super.setViewModelObserves()
-        mViewModel.mDataList.observe(getLifecycleOwner()) {
+        mViewModel.mFilterList.observe(getLifecycleOwner()) {
             mAdapter.setTreeData(it)
         }
     }
@@ -78,6 +110,6 @@ class PokeDexActivity : BaseRefreshVmActivity() {
     override fun initData() {
         super.initData()
         showStatusLoading()
-        mViewModel.requestDataList(getContext())
+        mViewModel.requestDataList(getContext(), mContentStr)
     }
 }
