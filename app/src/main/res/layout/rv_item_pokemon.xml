@@ -66,8 +66,8 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_11000000_corners_10"
                 android:gravity="center"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
                 android:textColor="@color/color_fefefe"
                 android:textSize="12sp" />
 
@@ -75,11 +75,11 @@
                 android:id="@+id/type_second_tv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/bg_11000000_corners_10"
                 android:gravity="center"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
                 android:textColor="@color/color_fefefe"
                 android:textSize="12sp" />
 
