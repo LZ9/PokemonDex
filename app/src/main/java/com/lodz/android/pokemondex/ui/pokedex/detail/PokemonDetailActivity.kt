@@ -18,6 +18,7 @@ import com.lodz.android.pokemondex.bean.poke.pkm.PkmInfoBean
 import com.lodz.android.pokemondex.databinding.ActivityPokemonDetailBinding
 import androidx.core.util.Pair
 import com.lodz.android.pandora.base.activity.AbsActivity
+import com.lodz.android.pokemondex.utils.PokeUtils
 
 /**
  * 宝可梦详情
@@ -80,6 +81,11 @@ class PokemonDetailActivity : AbsActivity() {
 
     override fun initData() {
         super.initData()
+        showTransitionView()
+        showTypes(mBinding.typeFirstTv, mBinding.typeSecondTv, mPokeBean?.typesList)
+    }
+
+    private fun showTransitionView() {
         ImageLoader.create(getContext()).loadUrl(mPokeBean?.imgUrl ?: "").into(mBinding.pokeImg)
         mBinding.nameTv.text = mPokeBean?.name
         mBinding.indexTv.text = mPokeBean?.index
@@ -88,4 +94,24 @@ class PokemonDetailActivity : AbsActivity() {
         TransitionHelper.setTransition(mBinding.indexTv, INDEX_VIEW)
         TransitionHelper.setEnterTransitionDuration(this, 500)
     }
+
+    /** 显示属性 */
+    private fun showTypes(firstTv: TextView, secondTv: TextView, list: ArrayList<String>?) {
+        firstTv.visibility = View.INVISIBLE
+        secondTv.visibility = View.INVISIBLE
+        if (list == null){
+            return
+        }
+        if (list.size >= 1) {
+            firstTv.text = list[0]
+            firstTv.background = PokeUtils.getBgDrawable(getContext(), list[0])
+            firstTv.visibility = View.VISIBLE
+        }
+        if (list.size >= 2) {
+            secondTv.text = list[1]
+            secondTv.background = PokeUtils.getBgDrawable(getContext(), list[1])
+            secondTv.visibility = View.VISIBLE
+        }
+    }
+
 }

@@ -1,8 +1,14 @@
 package com.lodz.android.pokemondex.utils
 
 import android.content.Context
+import android.graphics.Paint
 import androidx.annotation.ColorRes
+import com.google.android.material.shape.MaterialShapeDrawable
+import com.google.android.material.shape.RoundedCornerTreatment
+import com.google.android.material.shape.ShapeAppearanceModel
+import com.lodz.android.corekt.anko.dp2pxRF
 import com.lodz.android.corekt.anko.getAssetsFileContent
+import com.lodz.android.corekt.anko.getColorCompat
 import com.lodz.android.pandora.utils.jackson.parseJsonObject
 import com.lodz.android.pokemondex.R
 import com.lodz.android.pokemondex.bean.base.BaseListBean
@@ -67,4 +73,16 @@ object PokeUtils {
     /** 获取宝可梦列表，上下文[context] */
     fun getPokemonList(context: Context): ArrayList<PkmInfoBean> =
         context.getAssetsFileContent(Constant.POKEMON_INFO_FILE_NAME).parseJsonObject<BaseListBean<PkmInfoBean>>().records
+
+    /** 获取属性[typeName]对应背景色 */
+    fun getBgDrawable(context: Context, typeName: String): MaterialShapeDrawable {
+        val shapeModel = ShapeAppearanceModel.builder()
+            .setAllCorners(RoundedCornerTreatment())
+            .setAllCornerSizes(context.dp2pxRF(8))
+            .build()
+        return MaterialShapeDrawable(shapeModel).apply {
+            setTint(context.getColorCompat(getTypeColor(typeName)))
+            paintStyle = Paint.Style.FILL
+        }
+    }
 }
