@@ -14,7 +14,7 @@ import com.lodz.android.pandora.widget.rv.anko.setup
 import com.lodz.android.pokemondex.R
 import com.lodz.android.pokemondex.bean.poke.pkm.PkmInfoBean
 import com.lodz.android.pokemondex.databinding.ActivityPokedexListBinding
-import com.lodz.android.pokemondex.db.table.PokemonInfoTableCursor
+import com.lodz.android.pokemondex.databinding.RvItemPokemonBinding
 import com.lodz.android.pokemondex.ui.pokedex.detail.PokemonDetailActivity
 
 /**
@@ -77,7 +77,9 @@ class PokeDexActivity : BaseRefreshVmActivity() {
 
         mAdapter.setOnItemClickListener { viewHolder, item, position ->
             if (item is PkmInfoBean) {
-                PokemonDetailActivity.start(getContext(), item, viewHolder.itemView.tag as Int)
+                viewHolder.getVB<RvItemPokemonBinding>().apply {
+                    PokemonDetailActivity.start(this@PokeDexActivity, item, pokeImg, nameTv, indexTv, viewHolder.itemView.tag as Int)
+                }
             }
         }
 
