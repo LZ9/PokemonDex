@@ -71,7 +71,7 @@ class PokemonListAdapter(context: Context) : BaseTreeRvAdapter<PkmGenBean, DataV
             indexTv.text = bean.index
             nameTv.text = bean.name
             showTypes(typeFirstTv, typeSecondTv, bean.typesList)
-            showImg(cardLayout, pokeImg, bean.imgUrl)
+            showImg(holder, cardLayout, pokeImg, bean.imgUrl)
         }
     }
 
@@ -90,7 +90,7 @@ class PokemonListAdapter(context: Context) : BaseTreeRvAdapter<PkmGenBean, DataV
     }
 
     /** 显示宝可梦图片 */
-    private fun showImg(layout: CardView, pokeImg: ImageView, url: String) {
+    private fun showImg(holder: DataVBViewHolder, layout: CardView, pokeImg: ImageView, url: String) {
         ImageLoader.create(context)
             .loadUrl(url)
             .into(pokeImg,
@@ -102,6 +102,7 @@ class PokemonListAdapter(context: Context) : BaseTreeRvAdapter<PkmGenBean, DataV
                         if (rgb != null) {
                             layout.setCardBackgroundColor(rgb)
                         }
+                        holder.itemView.tag = rgb
                     }
                     .crossfade(true)
             )

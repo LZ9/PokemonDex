@@ -76,8 +76,8 @@ class PokeDexActivity : BaseRefreshVmActivity() {
         super.setListeners()
 
         mAdapter.setOnItemClickListener { viewHolder, item, position ->
-            if (item is PkmInfoBean){
-                PokemonDetailActivity.start(getContext(), item.id, item.name)
+            if (item is PkmInfoBean) {
+                PokemonDetailActivity.start(getContext(), item, viewHolder.itemView.tag as Int)
             }
         }
 
