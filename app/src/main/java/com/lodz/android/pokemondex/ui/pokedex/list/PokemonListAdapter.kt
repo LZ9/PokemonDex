@@ -17,6 +17,7 @@ import com.lodz.android.pokemondex.bean.poke.pkm.PkmGenBean
 import com.lodz.android.pokemondex.bean.poke.pkm.PkmInfoBean
 import com.lodz.android.pokemondex.databinding.RvItemGenBinding
 import com.lodz.android.pokemondex.databinding.RvItemPokemonBinding
+import com.lodz.android.pokemondex.utils.PokeUtils
 import java.util.ArrayList
 
 /**
@@ -81,10 +82,12 @@ class PokemonListAdapter(context: Context) : BaseTreeRvAdapter<PkmGenBean, DataV
         secondTv.visibility = View.INVISIBLE
         if (list.size >= 1) {
             firstTv.text = list[0]
+            firstTv.background = PokeUtils.getBgDrawable(context, list[0])
             firstTv.visibility = View.VISIBLE
         }
         if (list.size >= 2) {
             secondTv.text = list[1]
+            secondTv.background = PokeUtils.getBgDrawable(context, list[1])
             secondTv.visibility = View.VISIBLE
         }
     }
