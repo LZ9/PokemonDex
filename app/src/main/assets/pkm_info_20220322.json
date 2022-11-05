@@ -320,7 +320,8 @@
               "龙"
             ]
           }
-        ],[
+        ],
+        [
           {
             "evolutionCondition": "等级16以上",
             "imgUrl": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png",
@@ -425,7 +426,8 @@
               "龙"
             ]
           }
-        ],[
+        ],
+        [
           {
             "evolutionCondition": "等级16以上",
             "imgUrl": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png",
@@ -530,7 +532,8 @@
               "龙"
             ]
           }
-        ],[
+        ],
+        [
           {
             "evolutionCondition": "等级16以上",
             "imgUrl": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png",
@@ -636,7 +639,8 @@
               "龙"
             ]
           }
-        ],[
+        ],
+        [
           {
             "evolutionCondition": "等级16以上",
             "imgUrl": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png",
@@ -740,7 +744,8 @@
               "龙"
             ]
           }
-        ],[
+        ],
+        [
           {
             "evolutionCondition": "等级16以上",
             "imgUrl": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png",
@@ -2165,365 +2170,708 @@
       "weight": "12.5kg"
     },
     {
-      "abilitiesList": [],
-      "attack": 0,
-      "defense": 0,
+      "abilitiesList": [
+        "沙隐",
+        "沙穴"
+      ],
+      "attack": 55,
+      "defense": 25,
       "evolutionList": [],
       "generation": 1,
-      "height": "",
-      "hideAbilitiesList": [],
-      "hp": 0,
-      "id": 0,
+      "height": "0.2m",
+      "hideAbilitiesList": [
+        "沙之力"
+      ],
+      "hp": 10,
+      "id": 63,
       "imgUrl": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/050.png",
       "index": "#050",
-      "name": "",
-      "specialAttack": 0,
-      "specialDefense": 0,
-      "speed": 0,
-      "typesList": [],
-      "weight": ""
+      "name": "地鼠",
+      "specialAttack": 35,
+      "specialDefense": 45,
+      "speed": 95,
+      "typesList": [
+        "地面"
+      ],
+      "weight": "0.8kg"
     },
     {
-      "abilitiesList": [],
-      "attack": 0,
-      "defense": 0,
+      "abilitiesList": [
+        "沙隐",
+        "卷发"
+      ],
+      "attack": 55,
+      "defense": 30,
       "evolutionList": [],
       "generation": 1,
-      "height": "",
-      "hideAbilitiesList": [],
-      "hp": 0,
-      "id": 0,
+      "height": "0.2m",
+      "hideAbilitiesList": [
+        "沙之力"
+      ],
+      "hp": 10,
+      "id": 64,
+      "imgUrl": "https://media.52poke.com/wiki/thumb/1/10/050Diglett-Alola.png/240px-050Diglett-Alola.png",
+      "index": "#050",
+      "name": "阿罗拉地鼠",
+      "specialAttack": 35,
+      "specialDefense": 45,
+      "speed": 90,
+      "typesList": [
+        "地面",
+        "钢"
+      ],
+      "weight": "1.0kg"
+    },
+    {
+      "abilitiesList": [
+        "沙隐",
+        "沙穴"
+      ],
+      "attack": 100,
+      "defense": 50,
+      "evolutionList": [],
+      "generation": 1,
+      "height": "0.7m",
+      "hideAbilitiesList": [
+        "沙之力"
+      ],
+      "hp": 35,
+      "id": 65,
       "imgUrl": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/051.png",
       "index": "#051",
-      "name": "",
-      "specialAttack": 0,
-      "specialDefense": 0,
-      "speed": 0,
-      "typesList": [],
-      "weight": ""
+      "name": "三地鼠",
+      "specialAttack": 50,
+      "specialDefense": 70,
+      "speed": 120,
+      "typesList": [
+        "地面"
+      ],
+      "weight": "33.3kg"
     },
     {
-      "abilitiesList": [],
-      "attack": 0,
-      "defense": 0,
+      "abilitiesList": [
+        "沙隐",
+        "卷发"
+      ],
+      "attack": 100,
+      "defense": 60,
       "evolutionList": [],
       "generation": 1,
-      "height": "",
-      "hideAbilitiesList": [],
-      "hp": 0,
-      "id": 0,
+      "height": "0.7m",
+      "hideAbilitiesList": [
+        "沙之力"
+      ],
+      "hp": 35,
+      "id": 66,
+      "imgUrl": "https://media.52poke.com/wiki/thumb/2/22/051Dugtrio-Alola.png/240px-051Dugtrio-Alola.png",
+      "index": "#051",
+      "name": "阿罗拉三地鼠",
+      "specialAttack": 50,
+      "specialDefense": 70,
+      "speed": 110,
+      "typesList": [
+        "地面",
+        "钢"
+      ],
+      "weight": "66.6kg"
+    },
+    {
+      "abilitiesList": [
+        "捡拾",
+        "技术高手"
+      ],
+      "attack": 45,
+      "defense": 35,
+      "evolutionList": [],
+      "generation": 1,
+      "height": "0.4m",
+      "hideAbilitiesList": [
+        "紧张感"
+      ],
+      "hp": 40,
+      "id": 67,
       "imgUrl": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/052.png",
       "index": "#052",
-      "name": "",
-      "specialAttack": 0,
-      "specialDefense": 0,
-      "speed": 0,
-      "typesList": [],
-      "weight": ""
+      "name": "喵喵",
+      "specialAttack": 40,
+      "specialDefense": 40,
+      "speed": 90,
+      "typesList": [
+        "一般"
+      ],
+      "weight": "4.2kg"
     },
     {
-      "abilitiesList": [],
-      "attack": 0,
-      "defense": 0,
+      "abilitiesList": [
+        "捡拾",
+        "技术高手"
+      ],
+      "attack": 35,
+      "defense": 35,
       "evolutionList": [],
       "generation": 1,
-      "height": "",
-      "hideAbilitiesList": [],
-      "hp": 0,
+      "height": "0.4m",
+      "hideAbilitiesList": [
+        "胆怯"
+      ],
+      "hp": 40,
+      "id": 68,
+      "imgUrl": "https://media.52poke.com/wiki/thumb/e/e3/052Meowth-Alola.png/240px-052Meowth-Alola.png",
+      "index": "#052",
+      "name": "阿罗拉喵喵",
+      "specialAttack": 50,
+      "specialDefense": 40,
+      "speed": 90,
+      "typesList": [
+        "恶"
+      ],
+      "weight": "4.2kg"
+    },
+    {
+      "abilitiesList": [
+        "捡拾",
+        "硬爪"
+      ],
+      "attack": 65,
+      "defense": 55,
+      "evolutionList": [],
+      "generation": 1,
+      "height": "0.4m",
+      "hideAbilitiesList": [
+        "紧张感"
+      ],
+      "hp": 50,
+      "id": 0,
+      "imgUrl": "https://media.52poke.com/wiki/0/09/052Meowth-Galar.png",
+      "index": "#052",
+      "name": "伽勒尔喵喵",
+      "specialAttack": 40,
+      "specialDefense": 40,
+      "speed": 40,
+      "typesList": [
+        "钢"
+      ],
+      "weight": "7.5kg"
+    },
+    {
+      "abilitiesList": [
+        "柔软",
+        "技术高手"
+      ],
+      "attack": 70,
+      "defense": 60,
+      "evolutionList": [],
+      "generation": 1,
+      "height": "1.0m",
+      "hideAbilitiesList": [
+        "紧张感"
+      ],
+      "hp": 65,
       "id": 0,
       "imgUrl": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/053.png",
       "index": "#053",
-      "name": "",
-      "specialAttack": 0,
-      "specialDefense": 0,
-      "speed": 0,
-      "typesList": [],
-      "weight": ""
+      "name": "猫老大",
+      "specialAttack": 65,
+      "specialDefense": 65,
+      "speed": 115,
+      "typesList": [
+        "一般"
+      ],
+      "weight": "32.0kg"
     },
     {
-      "abilitiesList": [],
-      "attack": 0,
-      "defense": 0,
+      "abilitiesList": [
+        "毛皮大衣",
+        "技术高手"
+      ],
+      "attack": 60,
+      "defense": 60,
       "evolutionList": [],
       "generation": 1,
-      "height": "",
-      "hideAbilitiesList": [],
-      "hp": 0,
+      "height": "1.1m",
+      "hideAbilitiesList": [
+        "胆怯"
+      ],
+      "hp": 65,
+      "id": 0,
+      "imgUrl": "https://media.52poke.com/wiki/thumb/8/80/053Persian-Alola.png/240px-053Persian-Alola.png",
+      "index": "#053",
+      "name": "阿罗拉猫老大",
+      "specialAttack": 75,
+      "specialDefense": 65,
+      "speed": 115,
+      "typesList": [
+        "恶"
+      ],
+      "weight": "33.0kg"
+    },
+    {
+      "abilitiesList": [
+        "湿气",
+        "无关天气"
+      ],
+      "attack": 52,
+      "defense": 48,
+      "evolutionList": [],
+      "generation": 1,
+      "height": "0.8m",
+      "hideAbilitiesList": [
+        "悠游自如"
+      ],
+      "hp": 50,
       "id": 0,
       "imgUrl": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/054.png",
       "index": "#054",
-      "name": "",
-      "specialAttack": 0,
-      "specialDefense": 0,
-      "speed": 0,
-      "typesList": [],
-      "weight": ""
+      "name": "可达鸭",
+      "specialAttack": 65,
+      "specialDefense": 50,
+      "speed": 55,
+      "typesList": [
+        "水"
+      ],
+      "weight": "19.6kg"
     },
     {
-      "abilitiesList": [],
-      "attack": 0,
-      "defense": 0,
+      "abilitiesList": [
+        "湿气",
+        "无关天气"
+      ],
+      "attack": 82,
+      "defense": 78,
       "evolutionList": [],
       "generation": 1,
-      "height": "",
-      "hideAbilitiesList": [],
-      "hp": 0,
+      "height": "1.7m",
+      "hideAbilitiesList": [
+        "悠游自如"
+      ],
+      "hp": 80,
       "id": 0,
       "imgUrl": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/055.png",
       "index": "#055",
-      "name": "",
-      "specialAttack": 0,
-      "specialDefense": 0,
-      "speed": 0,
-      "typesList": [],
-      "weight": ""
+      "name": "哥达鸭",
+      "specialAttack": 95,
+      "specialDefense": 80,
+      "speed": 85,
+      "typesList": [
+        "水"
+      ],
+      "weight": "76.6kg"
     },
     {
-      "abilitiesList": [],
-      "attack": 0,
-      "defense": 0,
+      "abilitiesList": [
+        "干劲",
+        "愤怒穴位"
+      ],
+      "attack": 80,
+      "defense": 35,
       "evolutionList": [],
       "generation": 1,
-      "height": "",
-      "hideAbilitiesList": [],
-      "hp": 0,
+      "height": "0.5m",
+      "hideAbilitiesList": [
+        "不服输"
+      ],
+      "hp": 40,
       "id": 0,
       "imgUrl": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/056.png",
       "index": "#056",
-      "name": "",
-      "specialAttack": 0,
-      "specialDefense": 0,
-      "speed": 0,
-      "typesList": [],
-      "weight": ""
+      "name": "猴怪",
+      "specialAttack": 35,
+      "specialDefense": 45,
+      "speed": 70,
+      "typesList": [
+        "格斗"
+      ],
+      "weight": "28.0kg"
     },
     {
-      "abilitiesList": [],
-      "attack": 0,
-      "defense": 0,
+      "abilitiesList": [
+        "干劲",
+        "愤怒穴位"
+      ],
+      "attack": 105,
+      "defense": 60,
       "evolutionList": [],
       "generation": 1,
-      "height": "",
-      "hideAbilitiesList": [],
-      "hp": 0,
+      "height": "1.0m",
+      "hideAbilitiesList": [
+        "不服输"
+      ],
+      "hp": 65,
       "id": 0,
       "imgUrl": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/057.png",
       "index": "#057",
-      "name": "",
-      "specialAttack": 0,
-      "specialDefense": 0,
-      "speed": 0,
-      "typesList": [],
-      "weight": ""
+      "name": "火暴猴",
+      "specialAttack": 60,
+      "specialDefense": 70,
+      "speed": 95,
+      "typesList": [
+        "格斗"
+      ],
+      "weight": "32.0kg"
     },
     {
-      "abilitiesList": [],
-      "attack": 0,
-      "defense": 0,
+      "abilitiesList": [
+        "威吓",
+        "引火"
+      ],
+      "attack": 70,
+      "defense": 45,
       "evolutionList": [],
       "generation": 1,
-      "height": "",
-      "hideAbilitiesList": [],
-      "hp": 0,
+      "height": "0.7m",
+      "hideAbilitiesList": [
+        "正义之心"
+      ],
+      "hp": 55,
       "id": 0,
       "imgUrl": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/058.png",
       "index": "#058",
-      "name": "",
-      "specialAttack": 0,
-      "specialDefense": 0,
-      "speed": 0,
-      "typesList": [],
-      "weight": ""
+      "name": "卡蒂狗",
+      "specialAttack": 70,
+      "specialDefense": 50,
+      "speed": 60,
+      "typesList": [
+        "火"
+      ],
+      "weight": "19.0kg"
     },
     {
-      "abilitiesList": [],
-      "attack": 0,
-      "defense": 0,
+      "abilitiesList": [
+        "威吓",
+        "引火"
+      ],
+      "attack": 75,
+      "defense": 45,
       "evolutionList": [],
       "generation": 1,
-      "height": "",
-      "hideAbilitiesList": [],
-      "hp": 0,
+      "height": "0.8m",
+      "hideAbilitiesList": [
+        "正义之心"
+      ],
+      "hp": 60,
+      "id": 0,
+      "imgUrl": "https://media.52poke.com/wiki/thumb/a/a9/058Growlithe-Hisui.png/240px-058Growlithe-Hisui.png",
+      "index": "#058",
+      "name": "洗翠卡蒂狗",
+      "specialAttack": 65,
+      "specialDefense": 50,
+      "speed": 55,
+      "typesList": [
+        "火",
+        "岩石"
+      ],
+      "weight": "22.7kg"
+    },
+    {
+      "abilitiesList": [
+        "威吓",
+        "引火"
+      ],
+      "attack": 110,
+      "defense": 80,
+      "evolutionList": [],
+      "generation": 1,
+      "height": "1.9m",
+      "hideAbilitiesList": [
+        "正义之心"
+      ],
+      "hp": 90,
       "id": 0,
       "imgUrl": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/059.png",
       "index": "#059",
-      "name": "",
-      "specialAttack": 0,
-      "specialDefense": 0,
-      "speed": 0,
-      "typesList": [],
-      "weight": ""
+      "name": "风速狗",
+      "specialAttack": 110,
+      "specialDefense": 80,
+      "speed": 95,
+      "typesList": [
+        "火"
+      ],
+      "weight": "155.0kg"
     },
     {
-      "abilitiesList": [],
-      "attack": 0,
-      "defense": 0,
+      "abilitiesList": [
+        "威吓",
+        "引火"
+      ],
+      "attack": 115,
+      "defense": 80,
       "evolutionList": [],
       "generation": 1,
-      "height": "",
-      "hideAbilitiesList": [],
-      "hp": 0,
+      "height": "2.0m",
+      "hideAbilitiesList": [
+        "正义之心"
+      ],
+      "hp": 95,
+      "id": 0,
+      "imgUrl": "https://media.52poke.com/wiki/6/63/059Arcanine-Hisui.png",
+      "index": "#059",
+      "name": "洗翠风速狗",
+      "specialAttack": 95,
+      "specialDefense": 80,
+      "speed": 90,
+      "typesList": [
+        "火",
+        "岩石"
+      ],
+      "weight": "168.0kg"
+    },
+    {
+      "abilitiesList": [
+        "储水",
+        "湿气"
+      ],
+      "attack": 50,
+      "defense": 40,
+      "evolutionList": [],
+      "generation": 1,
+      "height": "0.6m",
+      "hideAbilitiesList": [
+        "悠游自如"
+      ],
+      "hp": 40,
       "id": 0,
       "imgUrl": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/060.png",
       "index": "#060",
-      "name": "",
-      "specialAttack": 0,
-      "specialDefense": 0,
-      "speed": 0,
-      "typesList": [],
-      "weight": ""
+      "name": "蚊香蝌蚪",
+      "specialAttack": 40,
+      "specialDefense": 40,
+      "speed": 90,
+      "typesList": [
+        "水"
+      ],
+      "weight": "12.4kg"
     },
     {
-      "abilitiesList": [],
-      "attack": 0,
-      "defense": 0,
+      "abilitiesList": [
+        "储水",
+        "湿气"
+      ],
+      "attack": 65,
+      "defense": 65,
       "evolutionList": [],
       "generation": 1,
-      "height": "",
-      "hideAbilitiesList": [],
-      "hp": 0,
+      "height": "1.0m",
+      "hideAbilitiesList": [
+        "悠游自如"
+      ],
+      "hp": 65,
       "id": 0,
       "imgUrl": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/061.png",
       "index": "#061",
-      "name": "",
-      "specialAttack": 0,
-      "specialDefense": 0,
-      "speed": 0,
-      "typesList": [],
-      "weight": ""
+      "name": "蚊香君",
+      "specialAttack": 50,
+      "specialDefense": 50,
+      "speed": 90,
+      "typesList": [
+        "水"
+      ],
+      "weight": "20.0kg"
     },
     {
-      "abilitiesList": [],
-      "attack": 0,
-      "defense": 0,
+      "abilitiesList": [
+        "储水",
+        "湿气"
+      ],
+      "attack": 95,
+      "defense": 95,
       "evolutionList": [],
       "generation": 1,
-      "height": "",
-      "hideAbilitiesList": [],
-      "hp": 0,
+      "height": "1.3m",
+      "hideAbilitiesList": [
+        "悠游自如"
+      ],
+      "hp": 90,
       "id": 0,
       "imgUrl": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/062.png",
       "index": "#062",
-      "name": "",
-      "specialAttack": 0,
-      "specialDefense": 0,
-      "speed": 0,
-      "typesList": [],
-      "weight": ""
+      "name": "蚊香泳士",
+      "specialAttack": 70,
+      "specialDefense": 90,
+      "speed": 70,
+      "typesList": [
+        "水",
+        "格斗"
+      ],
+      "weight": "54.0kg"
     },
     {
-      "abilitiesList": [],
-      "attack": 0,
-      "defense": 0,
+      "abilitiesList": [
+        "同步",
+        "精神力"
+      ],
+      "attack": 20,
+      "defense": 15,
       "evolutionList": [],
       "generation": 1,
-      "height": "",
-      "hideAbilitiesList": [],
-      "hp": 0,
+      "height": "0.9m",
+      "hideAbilitiesList": [
+        "魔法防守"
+      ],
+      "hp": 25,
       "id": 0,
       "imgUrl": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/063.png",
       "index": "#063",
-      "name": "",
-      "specialAttack": 0,
-      "specialDefense": 0,
-      "speed": 0,
-      "typesList": [],
-      "weight": ""
+      "name": "凯西",
+      "specialAttack": 105,
+      "specialDefense": 55,
+      "speed": 90,
+      "typesList": [
+        "超能力"
+      ],
+      "weight": "19.5kg"
     },
     {
-      "abilitiesList": [],
-      "attack": 0,
-      "defense": 0,
+      "abilitiesList": [
+        "同步",
+        "精神力"
+      ],
+      "attack": 35,
+      "defense": 30,
       "evolutionList": [],
       "generation": 1,
-      "height": "",
-      "hideAbilitiesList": [],
-      "hp": 0,
+      "height": "1.3m",
+      "hideAbilitiesList": [
+        "魔法防守"
+      ],
+      "hp": 40,
       "id": 0,
       "imgUrl": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/064.png",
       "index": "#064",
-      "name": "",
-      "specialAttack": 0,
-      "specialDefense": 0,
-      "speed": 0,
-      "typesList": [],
-      "weight": ""
+      "name": "勇基拉",
+      "specialAttack": 120,
+      "specialDefense": 70,
+      "speed": 105,
+      "typesList": [
+        "超能力"
+      ],
+      "weight": "56.5kg"
     },
     {
-      "abilitiesList": [],
-      "attack": 0,
-      "defense": 0,
+      "abilitiesList": [
+        "同步",
+        "精神力"
+      ],
+      "attack": 50,
+      "defense": 45,
       "evolutionList": [],
       "generation": 1,
-      "height": "",
-      "hideAbilitiesList": [],
-      "hp": 0,
+      "height": "1.5m",
+      "hideAbilitiesList": [
+        "魔法防守"
+      ],
+      "hp": 55,
       "id": 0,
       "imgUrl": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/065.png",
       "index": "#065",
-      "name": "",
-      "specialAttack": 0,
-      "specialDefense": 0,
-      "speed": 0,
-      "typesList": [],
-      "weight": ""
+      "name": "胡地",
+      "specialAttack": 135,
+      "specialDefense": 95,
+      "speed": 120,
+      "typesList": [
+        "超能力"
+      ],
+      "weight": "48.0kg"
     },
     {
-      "abilitiesList": [],
-      "attack": 0,
-      "defense": 0,
+      "abilitiesList": [
+        "复制"
+      ],
+      "attack": 50,
+      "defense": 65,
       "evolutionList": [],
       "generation": 1,
-      "height": "",
+      "height": "1.2m",
       "hideAbilitiesList": [],
-      "hp": 0,
+      "hp": 55,
+      "id": 0,
+      "imgUrl": "https://media.52poke.com/wiki/3/34/065Alakazam-Mega.png",
+      "index": "#065",
+      "name": "Mega胡地",
+      "specialAttack": 175,
+      "specialDefense": 105,
+      "speed": 150,
+      "typesList": [
+        "超能力"
+      ],
+      "weight": "48.0kg"
+    },
+    {
+      "abilitiesList": [
+        "毅力",
+        "无防守"
+      ],
+      "attack": 80,
+      "defense": 50,
+      "evolutionList": [],
+      "generation": 1,
+      "height": "0.8m",
+      "hideAbilitiesList": [
+        "不屈之心"
+      ],
+      "hp": 70,
       "id": 0,
       "imgUrl": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/066.png",
       "index": "#066",
-      "name": "",
-      "specialAttack": 0,
-      "specialDefense": 0,
-      "speed": 0,
-      "typesList": [],
-      "weight": ""
+      "name": "腕力",
+      "specialAttack": 35,
+      "specialDefense": 35,
+      "speed": 35,
+      "typesList": [
+        "格斗"
+      ],
+      "weight": "19.5kg"
     },
     {
-      "abilitiesList": [],
-      "attack": 0,
-      "defense": 0,
+      "abilitiesList": [
+        "毅力",
+        "无防守"
+      ],
+      "attack": 100,
+      "defense": 70,
       "evolutionList": [],
       "generation": 1,
-      "height": "",
-      "hideAbilitiesList": [],
-      "hp": 0,
+      "height": "1.5m",
+      "hideAbilitiesList": [
+        "不屈之心"
+      ],
+      "hp": 80,
       "id": 0,
       "imgUrl": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/067.png",
       "index": "#067",
-      "name": "",
-      "specialAttack": 0,
-      "specialDefense": 0,
-      "speed": 0,
-      "typesList": [],
-      "weight": ""
+      "name": "豪力",
+      "specialAttack": 50,
+      "specialDefense": 60,
+      "speed": 45,
+      "typesList": [
+        "格斗"
+      ],
+      "weight": "70.5kg"
     },
     {
-      "abilitiesList": [],
-      "attack": 0,
-      "defense": 0,
+      "abilitiesList": [
+        "毅力",
+        "无防守"
+      ],
+      "attack": 130,
+      "defense": 80,
       "evolutionList": [],
       "generation": 1,
-      "height": "",
-      "hideAbilitiesList": [],
-      "hp": 0,
+      "height": "1.6m",
+      "hideAbilitiesList": [
+        "不屈之心"
+      ],
+      "hp": 90,
       "id": 0,
       "imgUrl": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/068.png",
       "index": "#068",
-      "name": "",
-      "specialAttack": 0,
-      "specialDefense": 0,
-      "speed": 0,
-      "typesList": [],
-      "weight": ""
+      "name": "怪力",
+      "specialAttack": 65,
+      "specialDefense": 85,
+      "speed": 55,
+      "typesList": [
+        "格斗"
+      ],
+      "weight": "130.0kg"
     },
     {
       "abilitiesList": [],
