@@ -83,6 +83,8 @@ class PokemonDetailActivity : AbsActivity() {
         super.initData()
         showTransitionView()
         showTypes(mBinding.typeFirstTv, mBinding.typeSecondTv, mPokeBean?.typesList)
+        mBinding.heightTv.text = mPokeBean?.height
+        mBinding.weightTv.text = mPokeBean?.weight
     }
 
     private fun showTransitionView() {
@@ -99,7 +101,7 @@ class PokemonDetailActivity : AbsActivity() {
     private fun showTypes(firstTv: TextView, secondTv: TextView, list: ArrayList<String>?) {
         firstTv.visibility = View.INVISIBLE
         secondTv.visibility = View.INVISIBLE
-        if (list == null){
+        if (list == null) {
             return
         }
         if (list.size >= 1) {

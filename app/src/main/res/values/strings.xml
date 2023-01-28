@@ -42,5 +42,17 @@
     <string name="poke_dex_gen_8">第八世代</string>
     <string name="poke_dex_gen_unknow">未知世代</string>
 
+    <string name="poke_detail_base_stats">数据</string>
+    <string name="poke_detail_abilities">特性</string>
+    <string name="poke_detail_hide_abilities">隐藏特性</string>
+    <string name="poke_detail_height">身高：</string>
+    <string name="poke_detail_weight">体重：</string>
+    <string name="poke_detail_hp">血量</string>
+    <string name="poke_detail_attack">攻击</string>
+    <string name="poke_detail_defense">防御</string>
+    <string name="poke_detail_special_attack">特攻</string>
+    <string name="poke_detail_special_defense">特防</string>
+    <string name="poke_detail_speed">速度</string>
+
 
 </resources>
