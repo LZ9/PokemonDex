@@ -25,6 +25,9 @@ import com.lodz.android.pokemondex.ui.pokedex.detail.PokemonDetailActivity
 class PokeDexActivity : BaseRefreshVmActivity() {
 
     companion object {
+
+        /** Y轴默认滚动量 */
+        private const val DEF_SCROLL_DY = 5000
         fun start(context: Context) {
             val intent = Intent(context, PokeDexActivity::class.java)
             context.startActivity(intent)
@@ -76,7 +79,7 @@ class PokeDexActivity : BaseRefreshVmActivity() {
         super.setListeners()
 
         mAdapter.setOnItemClickListener { viewHolder, item, position ->
-            if (item is PkmInfoBean) {
+            if (item is PkmInfoBean && viewHolder.itemView.tag != null) {
                 viewHolder.getVB<RvItemPokemonBinding>().apply {
                     PokemonDetailActivity.start(this@PokeDexActivity, item, pokeImg, nameTv, indexTv, viewHolder.itemView.tag as Int)
                 }
@@ -103,6 +106,14 @@ class PokeDexActivity : BaseRefreshVmActivity() {
                 return@setOnEditorActionListener true
             }
             return@setOnEditorActionListener false
+        }
+
+        mBinding.scrollTopBtn.setOnClickListener {
+            mBinding.recyclerView.smoothScrollBy(0, -DEF_SCROLL_DY)
+        }
+
+        mBinding.scrollBottomBtn.setOnClickListener {
+            mBinding.recyclerView.smoothScrollBy(0, DEF_SCROLL_DY)
         }
     }
 
