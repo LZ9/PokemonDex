@@ -74,7 +74,7 @@ class PokemonDetailActivity : AbsActivity() {
     override fun setListeners() {
         super.setListeners()
         mBinding.backBtn.setOnClickListener {
-            finish()
+            TransitionHelper.finish(this)
         }
     }
 
@@ -116,4 +116,8 @@ class PokemonDetailActivity : AbsActivity() {
         }
     }
 
+    override fun onPressBack(): Boolean {
+        TransitionHelper.finish(this)
+        return true
+    }
 }

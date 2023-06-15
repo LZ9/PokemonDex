@@ -72,7 +72,7 @@ object PokeUtils {
 
     /** 获取宝可梦列表，上下文[context] */
     fun getPokemonList(context: Context): ArrayList<PkmInfoBean> =
-        context.getAssetsFileContent(Constant.POKEMON_INFO_FILE_NAME).parseJsonObject<BaseListBean<PkmInfoBean>>().records
+        context.getAssetsFileContent(Constant.POKEMON_INFO_FILE_NAME).parseJsonObject<BaseListBean<PkmInfoBean>>()?.records ?: ArrayList()
 
     /** 获取属性[typeName]对应背景色 */
     fun getBgDrawable(context: Context, typeName: String): MaterialShapeDrawable {

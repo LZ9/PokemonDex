@@ -12,7 +12,7 @@ import com.lodz.android.pokemondex.R
 import com.lodz.android.pokemondex.bean.base.BaseListBean
 import com.lodz.android.pokemondex.bean.poke.type.PkmTypeInfoBean
 import com.lodz.android.pokemondex.config.Constant
-import java.util.ArrayList
+import kotlin.collections.ArrayList
 
 /**
  * 属性ViewModel
@@ -30,8 +30,8 @@ class PokeTypeViewModel :BaseViewModel(){
         CoroutinesWrapper.create(this)
             .request {
                 val json = AES.decrypt(context.getAssetsFileContent(Constant.TYPE_INFO_FILE_NAME), AES.KEY) ?: ""
-                val list = json.parseJsonObject<BaseListBean<PkmTypeInfoBean>>()
-                Pair(list.records, getTableList(context, list.records.toArrayList()))
+                val list = json.parseJsonObject<BaseListBean<PkmTypeInfoBean>>()?.records ?: ArrayList()
+                Pair(list, getTableList(context, list))
             }
             .action {
                 onSuccess {
