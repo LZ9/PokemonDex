@@ -16,6 +16,7 @@
 
     <color name="color_11000000">#11000000</color>
     <color name="color_44010101">#44010101</color>
+    <color name="color_7fd04741">#7fd04741</color>
 
     <color name="color_d04741">#d04741</color>
     <color name="color_eeeef0">#eeeef0</color>
@@ -30,6 +31,8 @@
     <color name="color_e1fbd4">#e1fbd4</color>
     <color name="color_454545">#454545</color>
     <color name="color_ababab">#ababab</color>
+    <color name="color_f0f0f0">#f0f0f0</color>
+
 
 
 

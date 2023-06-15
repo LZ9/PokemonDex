@@ -17,8 +17,11 @@ import com.lodz.android.pandora.utils.transition.TransitionHelper
 import com.lodz.android.pokemondex.bean.poke.pkm.PkmInfoBean
 import com.lodz.android.pokemondex.databinding.ActivityPokemonDetailBinding
 import androidx.core.util.Pair
+import com.lodz.android.corekt.utils.ColorUtils
 import com.lodz.android.pandora.base.activity.AbsActivity
+import com.lodz.android.pokemondex.R
 import com.lodz.android.pokemondex.utils.PokeUtils
+import com.lodz.android.radarny.RadarnyBean
 
 /**
  * 宝可梦详情
@@ -58,7 +61,7 @@ class PokemonDetailActivity : AbsActivity() {
     override fun getAbsViewBindingLayout(): View = mBinding.root
 
     private val mPokeBean by intentSerializableExtras<PkmInfoBean>(EXTRA_POKE_BEAN)
-    private val mBackColor by intentExtras<Int>(EXTRA_BACK_COLOR)
+    private val mBackColorInt by intentExtras<Int>(EXTRA_BACK_COLOR)
 
     override fun findViews(savedInstanceState: Bundle?) {
         super.findViews(savedInstanceState)
@@ -66,7 +69,7 @@ class PokemonDetailActivity : AbsActivity() {
     }
 
     private fun initPokeColor() {
-        val color = mBackColor ?: Color.WHITE
+        val color = mBackColorInt ?: Color.WHITE
         mBinding.topLayout.setBackgroundColor(color)
         StatusBarUtil.setColor(window, color)
     }
@@ -85,8 +88,38 @@ class PokemonDetailActivity : AbsActivity() {
         showTypes(mBinding.typeFirstTv, mBinding.typeSecondTv, mPokeBean?.typesList)
         mBinding.heightTv.text = mPokeBean?.height
         mBinding.weightTv.text = mPokeBean?.weight
+        shoAbility()
     }
 
+    /** 显示种族值 */
+    private fun shoAbility() {
+        val color = mBackColorInt
+        if (color != null){
+            mBinding.radarnyView
+                .setFrameColor(color)
+                .setTextColor(color)
+                .setValueColor(ColorUtils.getColorAlphaInt(color, 0.5f))
+                .setAnimDuration(1000)
+        }
+        mBinding.radarnyView.setData(createAbilityData(mPokeBean)).build()
+    }
+
+    /** 创建种族值数据 */
+    private fun createAbilityData(bean: PkmInfoBean?): ArrayList<RadarnyBean> {
+        val list = ArrayList<RadarnyBean>()
+        if (bean == null) {
+            return list
+        }
+        list.add(RadarnyBean(getString(R.string.poke_detail_hp), bean.hp.toFloat()))
+        list.add(RadarnyBean(getString(R.string.poke_detail_attack), bean.attack.toFloat()))
+        list.add(RadarnyBean(getString(R.string.poke_detail_defense), bean.defense.toFloat()))
+        list.add(RadarnyBean(getString(R.string.poke_detail_special_attack), bean.specialAttack.toFloat()))
+        list.add(RadarnyBean(getString(R.string.poke_detail_special_defense), bean.specialDefense.toFloat()))
+        list.add(RadarnyBean(getString(R.string.poke_detail_speed), bean.speed.toFloat()))
+        return list
+    }
+
+    /** 显示共享动画 */
     private fun showTransitionView() {
         ImageLoader.create(getContext()).loadUrl(mPokeBean?.imgUrl ?: "").into(mBinding.pokeImg)
         mBinding.nameTv.text = mPokeBean?.name

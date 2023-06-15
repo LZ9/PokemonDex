@@ -150,5 +150,32 @@
 
     </FrameLayout>
 
+    <com.lodz.android.radarny.RadarnyView
+        android:id="@+id/radarny_view"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:layout_gravity="center"
+        app:frameColor="@color/color_d04741"
+        app:frameWidth="5"
+        app:innerFrameColor="@color/color_f0f0f0"
+        app:innerFramePercentage="0.3"
+        app:innerFrameWidth="3"
+        app:isRound="false"
+        app:isShowLine="true"
+        app:isShowSrc="true"
+        app:lineColor="@color/color_f0f0f0"
+        app:lineWidth="3"
+        app:maxValue="255"
+        app:src="@drawable/ic_pokeball_color"
+        app:srcBgColor="@color/white"
+        app:srcBgPercentage="0.7"
+        app:srcHeight="25dp"
+        app:srcWidth="25dp"
+        app:textColor="@color/color_d04741"
+        app:textPercentage="1.2"
+        app:textSize="11sp"
+        app:valueColor="@color/color_7fd04741"
+        app:valuePaintStyle="fill"
+        app:valueWidth="5" />
 
 </LinearLayout>
