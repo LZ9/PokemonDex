@@ -33,7 +33,7 @@
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:textColor="@color/black"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 tools:text="#123" />
 
             <TextView
@@ -44,7 +44,7 @@
                 android:layout_marginEnd="20dp"
                 android:ellipsize="end"
                 android:textColor="@color/black"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 tools:text="喷火龙" />
 
         </LinearLayout>
@@ -72,6 +72,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="10dp"
+            android:baselineAligned="false"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -84,7 +85,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/poke_detail_height"
-                    android:textColor="@drawable/selector_text_010101"
+                    android:textColor="@color/color_010101"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -106,7 +107,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/poke_detail_weight"
-                    android:textColor="@drawable/selector_text_010101"
+                    android:textColor="@color/color_010101"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -148,13 +149,24 @@
 
         </LinearLayout>
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/abilities_rv"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="80dp">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
     </FrameLayout>
 
     <com.lodz.android.radarny.RadarnyView
         android:id="@+id/radarny_view"
         android:layout_width="match_parent"
-        android:layout_height="280dp"
+        android:layout_height="0dp"
         android:layout_gravity="center"
+        android:layout_weight="1"
         app:frameColor="@color/color_d04741"
         app:frameWidth="5"
         app:innerFrameColor="@color/color_f0f0f0"
@@ -173,9 +185,30 @@
         app:srcWidth="25dp"
         app:textColor="@color/color_d04741"
         app:textPercentage="1.2"
-        app:textSize="11sp"
+        app:textSize="14sp"
         app:valueColor="@color/color_7fd04741"
         app:valuePaintStyle="fill"
         app:valueWidth="5" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/poke_detail_ability_sum"
+            android:textColor="@color/color_010101"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/ability_sum_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp" />
+    </LinearLayout>
 
 </LinearLayout>

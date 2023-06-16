@@ -100,8 +100,10 @@ class PokemonDetailActivity : AbsActivity() {
                 .setTextColor(color)
                 .setValueColor(ColorUtils.getColorAlphaInt(color, 0.5f))
                 .setAnimDuration(1000)
+            mBinding.abilitySumTv.setTextColor(color)
         }
         mBinding.radarnyView.setData(createAbilityData(mPokeBean)).build()
+        mBinding.abilitySumTv.text = mPokeBean?.getAbilitySum()?.toString() ?: "0"
     }
 
     /** 创建种族值数据 */

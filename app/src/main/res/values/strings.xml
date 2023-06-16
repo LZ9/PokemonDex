@@ -53,7 +53,7 @@
     <string name="poke_detail_special_attack">特攻</string>
     <string name="poke_detail_special_defense">特防</string>
     <string name="poke_detail_speed">速度</string>
-    <string name="poke_detail_ability_sum">种族值总和</string>
+    <string name="poke_detail_ability_sum">种族值总和：</string>
 
 
 </resources>

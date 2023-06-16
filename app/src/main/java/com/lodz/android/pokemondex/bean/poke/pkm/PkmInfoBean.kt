@@ -66,4 +66,6 @@ class PkmInfoBean : RvTreeItem, Serializable {
     override fun fetchParentId(): String = generation.toString()
 
     override fun isRootItem(): Boolean = false
+
+    fun getAbilitySum(): Int = hp + attack + defense + specialAttack + specialDefense + speed
 }
