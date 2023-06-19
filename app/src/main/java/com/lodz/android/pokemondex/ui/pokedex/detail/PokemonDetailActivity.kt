@@ -19,7 +19,11 @@ import com.lodz.android.pokemondex.databinding.ActivityPokemonDetailBinding
 import androidx.core.util.Pair
 import com.lodz.android.corekt.utils.ColorUtils
 import com.lodz.android.pandora.base.activity.AbsActivity
+import com.lodz.android.pandora.widget.rv.anko.linear
+import com.lodz.android.pandora.widget.rv.anko.setupVB
 import com.lodz.android.pokemondex.R
+import com.lodz.android.pokemondex.config.Constant
+import com.lodz.android.pokemondex.databinding.RvItemAbilitiesBinding
 import com.lodz.android.pokemondex.utils.PokeUtils
 import com.lodz.android.radarny.RadarnyBean
 
@@ -88,11 +92,50 @@ class PokemonDetailActivity : AbsActivity() {
         showTypes(mBinding.typeFirstTv, mBinding.typeSecondTv, mPokeBean?.typesList)
         mBinding.heightTv.text = mPokeBean?.height
         mBinding.weightTv.text = mPokeBean?.weight
-        shoAbility()
+        showStrength()
+        showAbilities()
+    }
+
+    /** 显示特性 */
+    private fun showAbilities(){
+        mBinding.abilitiesRv
+            .linear()
+            .setupVB<Pair<Int, String>, RvItemAbilitiesBinding>(RvItemAbilitiesBinding::inflate) { vb, holder, position ->
+                val item = getItem(position) ?: return@setupVB
+                vb.titleTv.visibility = View.GONE
+                vb.abilitiesTv.visibility = View.GONE
+                if (item.first == Constant.POKE_ABILITIES_TITLE || item.first == Constant.POKE_HIDE_ABILITIES_TITLE) {
+                    vb.titleTv.text = item.second
+                    vb.titleTv.visibility = View.VISIBLE
+                }
+                if (item.first == Constant.POKE_ABILITIES_CONTENT) {
+                    vb.abilitiesTv.text = item.second
+                    vb.abilitiesTv.background = PokeUtils.getColorBgDrawable(getContext(), getContext().getColorCompat(R.color.color_44010101))
+                    vb.abilitiesTv.visibility = View.VISIBLE
+                }
+            }
+            .setData(createAbilitiesData(mPokeBean))
+    }
+
+    /** 创建特性列表 */
+    private fun createAbilitiesData(bean: PkmInfoBean?): ArrayList<Pair<Int, String>> {
+        if (bean == null) {
+            return ArrayList()
+        }
+        val list = ArrayList<Pair<Int, String>>()
+        list.add(Pair(Constant.POKE_ABILITIES_TITLE, getString(R.string.poke_detail_abilities)))
+        bean.abilitiesList.forEach {
+            list.add(Pair(Constant.POKE_ABILITIES_CONTENT, it))
+        }
+        list.add(Pair(Constant.POKE_ABILITIES_TITLE, getString(R.string.poke_detail_hide_abilities)))
+        bean.hideAbilitiesList.forEach {
+            list.add(Pair(Constant.POKE_ABILITIES_CONTENT, it))
+        }
+        return list
     }
 
     /** 显示种族值 */
-    private fun shoAbility() {
+    private fun showStrength() {
         val color = mBackColorInt
         if (color != null){
             mBinding.radarnyView
@@ -102,12 +145,12 @@ class PokemonDetailActivity : AbsActivity() {
                 .setAnimDuration(1000)
             mBinding.abilitySumTv.setTextColor(color)
         }
-        mBinding.radarnyView.setData(createAbilityData(mPokeBean)).build()
+        mBinding.radarnyView.setData(createStrengthData(mPokeBean)).build()
         mBinding.abilitySumTv.text = mPokeBean?.getAbilitySum()?.toString() ?: "0"
     }
 
     /** 创建种族值数据 */
-    private fun createAbilityData(bean: PkmInfoBean?): ArrayList<RadarnyBean> {
+    private fun createStrengthData(bean: PkmInfoBean?): ArrayList<RadarnyBean> {
         val list = ArrayList<RadarnyBean>()
         if (bean == null) {
             return list

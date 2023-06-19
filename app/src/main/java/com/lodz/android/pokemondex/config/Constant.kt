@@ -90,4 +90,11 @@ object Constant {
     const val POKE_DEX_LAYOUT_LINEAR = 1
     /** 图鉴布局网格  */
     const val POKE_DEX_LAYOUT_GRID = 2
+
+    /** 普通特性标题  */
+    const val POKE_ABILITIES_TITLE = 1
+    /** 隐藏特性标题  */
+    const val POKE_HIDE_ABILITIES_TITLE = 2
+    /** 特性内容  */
+    const val POKE_ABILITIES_CONTENT = 3
 }

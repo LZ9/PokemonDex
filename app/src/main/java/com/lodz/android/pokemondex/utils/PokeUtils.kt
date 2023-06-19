@@ -2,6 +2,7 @@ package com.lodz.android.pokemondex.utils
 
 import android.content.Context
 import android.graphics.Paint
+import androidx.annotation.ColorInt
 import androidx.annotation.ColorRes
 import com.google.android.material.shape.MaterialShapeDrawable
 import com.google.android.material.shape.RoundedCornerTreatment
@@ -82,6 +83,18 @@ object PokeUtils {
             .build()
         return MaterialShapeDrawable(shapeModel).apply {
             setTint(context.getColorCompat(getTypeColor(typeName)))
+            paintStyle = Paint.Style.FILL
+        }
+    }
+
+    /** 获取颜色[color]对应背景 */
+    fun getColorBgDrawable(context: Context, @ColorInt color: Int): MaterialShapeDrawable {
+        val shapeModel = ShapeAppearanceModel.builder()
+            .setAllCorners(RoundedCornerTreatment())
+            .setAllCornerSizes(context.dp2pxRF(8))
+            .build()
+        return MaterialShapeDrawable(shapeModel).apply {
+            setTint(color)
             paintStyle = Paint.Style.FILL
         }
     }
