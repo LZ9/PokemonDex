@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.Paint
 import androidx.annotation.ColorInt
 import androidx.annotation.ColorRes
+import androidx.palette.graphics.Palette
 import com.google.android.material.shape.MaterialShapeDrawable
 import com.google.android.material.shape.RoundedCornerTreatment
 import com.google.android.material.shape.ShapeAppearanceModel
@@ -98,4 +99,19 @@ object PokeUtils {
             paintStyle = Paint.Style.FILL
         }
     }
+
+    /** 获取调色板[palette]颜色 */
+    @ColorInt
+    fun getPaletteColor(palette: Palette?, @ColorInt defColor: Int): Int {
+        val lightMutedSwatchColor = palette?.lightMutedSwatch?.rgb
+        if (lightMutedSwatchColor != null) {
+            return lightMutedSwatchColor
+        }
+        val lightVibrantSwatchColor = palette?.lightVibrantSwatch?.rgb
+        if (lightVibrantSwatchColor != null) {
+            return lightVibrantSwatchColor
+        }
+        return defColor
+    }
+
 }

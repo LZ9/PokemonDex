@@ -127,9 +127,15 @@ class PokemonDetailActivity : AbsActivity() {
         bean.abilitiesList.forEach {
             list.add(Pair(Constant.POKE_ABILITIES_CONTENT, it))
         }
+        if (bean.abilitiesList.isEmpty()){
+            list.add(Pair(Constant.POKE_ABILITIES_CONTENT, "-"))
+        }
         list.add(Pair(Constant.POKE_ABILITIES_TITLE, getString(R.string.poke_detail_hide_abilities)))
         bean.hideAbilitiesList.forEach {
             list.add(Pair(Constant.POKE_ABILITIES_CONTENT, it))
+        }
+        if (bean.hideAbilitiesList.isEmpty()){
+            list.add(Pair(Constant.POKE_ABILITIES_CONTENT, "-"))
         }
         return list
     }
@@ -141,7 +147,7 @@ class PokemonDetailActivity : AbsActivity() {
             mBinding.radarnyView
                 .setFrameColor(color)
                 .setTextColor(color)
-                .setValueColor(ColorUtils.getColorAlphaInt(color, 0.5f))
+                .setValueColor(ColorUtils.getColorAlphaInt(color, 0.6f))
                 .setAnimDuration(1000)
             mBinding.abilitySumTv.setTextColor(color)
         }

@@ -101,15 +101,9 @@ class PokemonListAdapter(context: Context) : BaseTreeRvAdapter<PkmGenBean, DataV
                     .with(url)
                     .use(BitmapPalette.Profile.MUTED_LIGHT)
                     .intoCallBack {
-                        var rgb = it?.lightMutedSwatch?.rgb
-                        if (rgb == null) {
-                            rgb = it?.lightVibrantSwatch?.rgb
-                        }
-                        if (rgb == null) {
-                            rgb = Color.LTGRAY
-                        }
-                        layout.setCardBackgroundColor(rgb)
-                        holder.itemView.tag = rgb
+                        val color = PokeUtils.getPaletteColor(it, Color.LTGRAY)
+                        layout.setCardBackgroundColor(color)
+                        holder.itemView.tag = color
                     }
                     .crossfade(true)
             )
