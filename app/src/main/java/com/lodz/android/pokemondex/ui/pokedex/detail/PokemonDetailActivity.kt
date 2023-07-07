@@ -100,7 +100,7 @@ class PokemonDetailActivity : AbsActivity() {
     private fun showAbilities(){
         mBinding.abilitiesRv
             .linear()
-            .setupVB<Pair<Int, String>, RvItemAbilitiesBinding>(RvItemAbilitiesBinding::inflate) { vb, holder, position ->
+            .setupVB<Pair<Int, String>, RvItemAbilitiesBinding>(RvItemAbilitiesBinding::inflate) { context, vb, holder, position ->
                 val item = getItem(position) ?: return@setupVB
                 vb.titleTv.visibility = View.GONE
                 vb.abilitiesTv.visibility = View.GONE
